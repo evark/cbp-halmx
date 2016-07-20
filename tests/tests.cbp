@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tests" />
+		<Option pch_mode="2" />
+		<Option compiler="arm-elf-gcc" />
+		<Build>
+			<Target title="blink1-f103xb">
+				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="build/${TARGET_NAME}" />
+				<Option external_deps="../system/lib/libhal-f103xb.a;" />
+				<Option type="5" />
+				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Compiler>
+					<Add option="-mcpu=cortex-m3" />
+					<Add option="-mthumb" />
+					<Add option="-msoft-float" />
+					<Add option="-mfix-cortex-m3-ldrd" />
+					<Add option="-DSTM32F103xB" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="../system/cmsis/include" />
+					<Add directory="../system/cmsis/include/f1" />
+					<Add directory="../system/hal/include" />
+					<Add directory="../system/hal/include/f1" />
+					<Add directory="../system/stm32f103xb" />
+				</Compiler>
+				<Linker>
+					<Add option="-mcpu=cortex-m3" />
+					<Add option="-msoft-float" />
+					<Add option="-mfix-cortex-m3-ldrd" />
+					<Add option="-mthumb" />
+					<Add option="-nostdlib" />
+					<Add option="-Tstm32f103xb.ld" />
+					<Add option="-Wl,--start-group  -lhal-f103xb -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add directory="../system/lib" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="blink2-f103xb">
+				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="build/${TARGET_NAME}" />
+				<Option external_deps="../system/lib/libhal-f103xb.a;" />
+				<Option type="5" />
+				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Compiler>
+					<Add option="-mcpu=cortex-m3" />
+					<Add option="-mthumb" />
+					<Add option="-msoft-float" />
+					<Add option="-mfix-cortex-m3-ldrd" />
+					<Add option="-DSTM32F103xB" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="../system/cmsis/include" />
+					<Add directory="../system/cmsis/include/f1" />
+					<Add directory="../system/hal/include" />
+					<Add directory="../system/hal/include/f1" />
+					<Add directory="../system/stm32f103xb" />
+				</Compiler>
+				<Linker>
+					<Add option="-mcpu=cortex-m3" />
+					<Add option="-msoft-float" />
+					<Add option="-mfix-cortex-m3-ldrd" />
+					<Add option="-mthumb" />
+					<Add option="-nostdlib" />
+					<Add option="-Tstm32f103xb.ld" />
+					<Add option="-Wl,--start-group  -lhal-f103xb -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add directory="../system/lib" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="blink1-f401xe">
+				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="build/${TARGET_NAME}" />
+				<Option external_deps="../system/lib/libhal-f103xb.a;" />
+				<Option type="5" />
+				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Compiler>
+					<Add option="-mthumb" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-DSTM32F401xE" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="../system/cmsis/include" />
+					<Add directory="../system/cmsis/include/f4" />
+					<Add directory="../system/hal/include/f4" />
+					<Add directory="../system/stm32f401xe" />
+				</Compiler>
+				<Linker>
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-mthumb" />
+					<Add option="-nostdlib" />
+					<Add option="-Tstm32f401xe.ld" />
+					<Add option="-Wl,--start-group  -lhal-f401xe -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add directory="../system/lib" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="blink1-l476xx">
+				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="build/${TARGET_NAME}" />
+				<Option external_deps="../system/lib/libhal-f103xb.a;" />
+				<Option type="5" />
+				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Compiler>
+					<Add option="-mthumb" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-DSTM32L476XX" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="../system/cmsis/include" />
+					<Add directory="../system/cmsis/include/l4" />
+					<Add directory="../system/hal/include/l4" />
+					<Add directory="../system/stm32l476xx" />
+				</Compiler>
+				<Linker>
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-mthumb" />
+					<Add option="-nostdlib" />
+					<Add option="-Tstm32l476xx.ld" />
+					<Add option="-Wl,--start-group  -lhal-l476xx -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add directory="../system/lib" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="ALL" targets="blink1-f103xb;blink2-f103xb;blink1-f401xe;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Os" />
+			<Add option="-Wshadow" />
+			<Add option="-Wredundant-decls" />
+			<Add option="-Wundef" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-g" />
+			<Add option="-std=gnu11" />
+			<Add option="-nostdlib" />
+			<Add option="-fno-common" />
+			<Add option="-ffunction-sections" />
+			<Add option="-fdata-sections" />
+			<Add option="-fno-rtti" />
+			<Add option="-fno-exceptions" />
+			<Add option="-pipe" />
+		</Compiler>
+		<Linker>
+			<Add option="-Os" />
+			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
+			<Add option="-Wl,--gc-sections" />
+			<Add option="-mthumb" />
+			<Add option="--specs=nano.specs" />
+			<Add option="-Wl,--no-check-sections" />
+			<Add option="-Wl,-static" />
+		</Linker>
+		<Unit filename="blink1/main.cpp">
+			<Option target="blink1-f103xb" />
+			<Option target="blink1-f401xe" />
+			<Option target="blink1-l476xx" />
+		</Unit>
+		<Unit filename="blink2/main.cpp">
+			<Option target="blink2-f103xb" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<lib_finder disable_auto="1" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
