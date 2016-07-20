@@ -11,7 +11,7 @@
 				<Option working_dir="" />
 				<Option object_output="lib/${TARGET_NAME}" />
 				<Option type="2" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-mthumb" />
@@ -58,6 +58,24 @@
 					<Add directory="cmsis/include" />
 					<Add directory="cmsis/include/l4" />
 					<Add directory="stm32l476xx" />
+				</Compiler>
+			</Target>
+			<Target title="libhal-f411xe">
+				<Option output="lib/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="lib/${TARGET_NAME}" />
+				<Option type="2" />
+				<Option compiler="arm-elf-gcc" />
+				<Compiler>
+					<Add option="-mthumb" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-DSTM32F411xE" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="cmsis/include" />
+					<Add directory="cmsis/include/f4" />
+					<Add directory="stm32f411xe" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -299,222 +317,295 @@
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32_hal_legacy.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f401xe.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_adc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_adc_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_can.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_cec.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_conf.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_cortex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_crc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_cryp.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_cryp_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dac.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dac_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dcmi.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dcmi_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_def.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dfsdm.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dma.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dma2d.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dma_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_dsi.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_eth.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_flash.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_flash_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_flash_ramfunc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_fmpi2c.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_fmpi2c_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_gpio.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_gpio_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_hash.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_hash_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_hcd.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_i2c.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_i2c_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_i2s.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_i2s_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_irda.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_iwdg.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_lptim.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_ltdc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_ltdc_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_nand.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_nor.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_pccard.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_pcd.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_pcd_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_pwr.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_pwr_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_qspi.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_rcc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_rcc_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_rng.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_rtc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_rtc_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_sai.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_sai_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_sd.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_sdram.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_smartcard.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_spdifrx.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_spi.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_sram.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_tim.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_tim_ex.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_uart.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_usart.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_hal_wwdg.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_ll_fmc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_ll_fsmc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_ll_sdmmc.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/include/f4/stm32f4xx_ll_usb.h">
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f1/stm32f1xx_hal.c">
 			<Option compilerVar="CC" />
@@ -691,274 +782,342 @@
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_adc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_adc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_can.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_cec.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_cortex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_crc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_cryp.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_cryp_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dac.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dac_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dcmi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dcmi_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dfsdm.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dma.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dma2d.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dma_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_dsi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_eth.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_flash.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_flash_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_flash_ramfunc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_fmpi2c.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_fmpi2c_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_gpio.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_hash.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_hash_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_hcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_i2c.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_i2c_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_i2s.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_i2s_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_irda.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_iwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_lptim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_ltdc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_ltdc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_msp_template.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_nand.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_nor.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_pccard.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_pcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_pcd_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_pwr.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_pwr_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_qspi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_rcc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_rcc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_rng.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_rtc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_rtc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_sai.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_sai_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_sd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_sdram.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_smartcard.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_spdifrx.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_spi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_sram.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_tim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_tim_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_uart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_usart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_hal_wwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_ll_fmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_ll_fsmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_ll_sdmmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/f4/stm32f4xx_ll_usb.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="cmsis/src/l4/stm32l4xx_hal.c">
 			<Option compilerVar="CC" />
@@ -1317,6 +1476,26 @@
 		<Unit filename="stm32f401xe/system_stm32f4xx.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe" />
+		</Unit>
+		<Unit filename="stm32f411xe/cmsis.h">
+			<Option target="libhal-f411xe" />
+		</Unit>
+		<Unit filename="stm32f411xe/cmsis_nvic.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f411xe" />
+		</Unit>
+		<Unit filename="stm32f411xe/cmsis_nvic.h">
+			<Option target="libhal-f411xe" />
+		</Unit>
+		<Unit filename="stm32f411xe/startup_stm32f411xe.S">
+			<Option target="libhal-f411xe" />
+		</Unit>
+		<Unit filename="stm32f411xe/stm32f411xe.h">
+			<Option target="libhal-f411xe" />
+		</Unit>
+		<Unit filename="stm32f411xe/system_stm32f4xx.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f411xe" />
 		</Unit>
 		<Unit filename="stm32l476xx/cmsis.h">
 			<Option target="libhal-l476xx" />

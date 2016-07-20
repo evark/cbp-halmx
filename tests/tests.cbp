@@ -12,7 +12,7 @@
 				<Option object_output="build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-mthumb" />
@@ -47,7 +47,7 @@
 				<Option object_output="build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-mthumb" />
@@ -82,7 +82,7 @@
 				<Option object_output="build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
@@ -116,7 +116,7 @@
 				<Option object_output="build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
@@ -150,7 +150,7 @@
 				<Option object_output="build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5-2016-q1" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
@@ -180,7 +180,7 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="ALL" targets="blink1-f103xb;blink1-f401xe;blink2-f103xb;" />
+			<Add alias="ALL" targets="blink1-f103xb;blink2-f103xb;blink1-f401xe;blink2-f401xe;blink1-l476xx;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-Os" />
