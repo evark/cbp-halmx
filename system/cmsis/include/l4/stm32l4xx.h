@@ -10,8 +10,8 @@
   *          is using in the C source code, usually in main.c. This file contains:
   *           - Configuration section that allows to select:
   *              - The STM32L4xx device used in the target application
-  *              - To use or not the peripheralï¿½s drivers in application code(i.e.
-  *                code will be based on direct access to peripheralï¿½s registers
+  *              - To use or not the peripheral’s drivers in application code(i.e.
+  *                code will be based on direct access to peripheral’s registers
   *                rather than drivers API), this option is controlled by
   *                "#define USE_HAL_DRIVER"
   *
@@ -84,7 +84,7 @@
   /* #define STM32L443xx */   /*!< STM32L443xx Devices */
   /* #define STM32L471xx */   /*!< STM32L471xx Devices */
   /* #define STM32L475xx */   /*!< STM32L475xx Devices */
-#define STM32L476xx           /*!< STM32L476xx Devices */
+  /* #define STM32L476xx */   /*!< STM32L476xx Devices */
   /* #define STM32L485xx */   /*!< STM32L485xx Devices */
   /* #define STM32L486xx */   /*!< STM32L486xx Devices */
 #endif
@@ -98,7 +98,7 @@
    In this case, these drivers will not be included and the application code will
    be based on direct access to peripherals registers
    */
-  #define USE_HAL_DRIVER
+#define USE_HAL_DRIVER
 #endif /* USE_HAL_DRIVER */
 
 /**
