@@ -35,9 +35,9 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="blink2-f103xb">
-				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="build/${TARGET_NAME}" />
+				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
@@ -273,35 +273,6 @@
 					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
 				</ExtraCommands>
 			</Target>
-			<Target title="uart1-l476xx">
-				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
-				<Option working_dir="" />
-				<Option object_output="_build/${TARGET_NAME}" />
-				<Option external_deps="../system/lib/libhal-f103xb.a;" />
-				<Option type="5" />
-				<Option compiler="arm-elf-gcc" />
-				<Compiler>
-					<Add option="-mthumb" />
-					<Add option="-mcpu=cortex-m4" />
-					<Add option="-mfloat-abi=hard" />
-					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-DSTM32L476xx" />
-					<Add option="-DHSE_VALUE=8000000U" />
-					<Add directory="system/CMSIS/STM32L4xx/Include" />
-					<Add directory="system/STM32L4xx_HAL_Driver/Inc" />
-				</Compiler>
-				<Linker>
-					<Add option="-mcpu=cortex-m4" />
-					<Add option="-mfloat-abi=hard" />
-					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476xx.ld" />
-					<Add option="-Wl,--start-group  -lhal-l476xx-8m -lc -lgcc -lnosys -Wl,--end-group" />
-				</Linker>
-				<ExtraCommands>
-					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
-					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
-				</ExtraCommands>
-			</Target>
 		</Build>
 		<VirtualTargets>
 			<Add alias="ALL" targets="blink1-f103xb;blink2-f103xb;blink3-f103xb;blink1-f401xe;blink2-f401xe;blink3-f401xe;blink1-l476xx;blink2-l476xx;blink3-l476xx;" />
@@ -347,30 +318,10 @@
 			<Option target="blink2-f401xe" />
 			<Option target="blink2-l476xx" />
 		</Unit>
-		<Unit filename="tests/uart1/main.c">
-			<Option compilerVar="CC" />
-			<Option target="uart1-l476xx" />
-		</Unit>
-		<Unit filename="tests/uart1/mxconstants.h">
-			<Option target="uart1-l476xx" />
-		</Unit>
-		<Unit filename="tests/uart1/stm32l4xx_hal_conf.h">
-			<Option target="uart1-l476xx" />
-		</Unit>
-		<Unit filename="tests/uart1/stm32l4xx_hal_msp.c">
-			<Option compilerVar="CC" />
-			<Option target="uart1-l476xx" />
-		</Unit>
-		<Unit filename="tests/uart1/stm32l4xx_it.c">
-			<Option compilerVar="CC" />
-			<Option target="uart1-l476xx" />
-		</Unit>
-		<Unit filename="tests/uart1/stm32l4xx_it.h">
-			<Option target="uart1-l476xx" />
-		</Unit>
-		<Unit filename="tests/uart1/system_stm32l4xx.c">
-			<Option compilerVar="CC" />
-			<Option target="uart1-l476xx" />
+		<Unit filename="tests/blink3/main.cpp">
+			<Option target="blink3-f103xb" />
+			<Option target="blink3-f401xe" />
+			<Option target="blink3-l476xx" />
 		</Unit>
 		<Extensions>
 			<code_completion />

@@ -1,5 +1,11 @@
 #include <cmsis.h>
 
+/*
+
+ Simple Blink Test with HAL_Delay (Systick working)
+
+*/
+
 #ifdef STM32F103xB
 /* BLUE PILL */
     #define LEDPORT GPIOC

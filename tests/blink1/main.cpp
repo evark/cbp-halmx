@@ -1,5 +1,12 @@
 #include <cmsis.h>
 
+/*
+
+ Simple Blink Test with loop delay
+
+*/
+
+
 #ifdef STM32F103xB
 /* BLUE PILL */
     #define LEDPORT GPIOC
