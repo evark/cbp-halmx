@@ -1,0 +1,15 @@
+# STM32 Boards
+
+f103xb.name = STM32F103xB
+f103xb.build.board=f103xb
+f103xb.build.core=stm32hal
+f103xb.build.mcu=cortex-m3 -msoft-float -mfix-cortex-m3-ldrd
+f103xb.build.series=STM32F1xx
+f103xb.build.extra_flags=-DSTM32F103xB -DHSE_VALUE=8000000U
+f103xb.build.libhal=hal-f103xb-8m
+f103xb.build.ldscript=stm32f103xb.ld
+f103xb.upload.maximum_size=65536
+f103xb.upload.file_type=bin
+f103xb.upload.ram.maximum_size=20480
+f103xb.upload.flash.maximum_size=65536
+
