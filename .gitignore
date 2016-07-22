@@ -5,7 +5,6 @@
 *.map
 *.o
 *.d
-*.a
 *.layout
 *.save
 /tests/build/
