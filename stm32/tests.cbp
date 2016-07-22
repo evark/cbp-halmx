@@ -91,9 +91,9 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="blink1-f401xe">
-				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="build/${TARGET_NAME}" />
+				<Option object_output="_build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
@@ -104,18 +104,15 @@
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
-					<Add directory="../system/cmsis/include" />
-					<Add directory="../system/cmsis/include/f4" />
-					<Add directory="../system/stm32f401xe" />
+					<Add directory="system/CMSIS/STM32F4xx/Include" />
+					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-mthumb" />
-					<Add option="-nostdlib" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />

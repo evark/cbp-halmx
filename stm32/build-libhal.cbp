@@ -1856,6 +1856,11 @@
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
+		<Unit filename="system/libstm32/system_stm32f4xx.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f401xe-8m" />
+			<Option target="libhal-f411xe-8m" />
+		</Unit>
 		<Unit filename="system/startup/startup_stm32f103xb.S">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
