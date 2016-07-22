@@ -1,2 +1,3 @@
 # cbp-halmx
-STM32 HALMX projects using Code::Blocks
+STM32 HALMX projects using Code::Blocks IDE or Arduino IDE
+
