@@ -1,5 +1,8 @@
 # STM32 Boards
-
+menu.upload_method=Upload method
+#################################################################################
+###                      STM32F103xB                                         ####
+#################################################################################
 f103xb.name = STM32F103xB
 f103xb.build.board=f103xb
 f103xb.build.core=stm32hal
@@ -10,8 +13,16 @@ f103xb.build.libhal=hal-f103xb-8m
 f103xb.build.ldscript=stm32f103xb.ld
 f103xb.upload.maximum_size=131072
 f103xb.upload.file_type=bin
+f103xb.upload.params.quiet=no
 f103xb.upload.ram.maximum_size=20480
 f103xb.upload.flash.maximum_size=131072
+f103xb.menu.upload_method.texanestlink=texane/stlink
+f103xb.menu.upload_method.texanestlink.upload.tool=texanestlink
+f103xb.menu.upload_method.texanestlink.upload.protocol=stlink
+f103xb.menu.upload_method.texanestlink.upload.options=
+
+#################################################################################
+###                      STM32F401xE                                         ####
 #################################################################################
 f401xe.name = STM32F401xE
 f401xe.build.board=f401xe
@@ -23,6 +34,35 @@ f401xe.build.libhal=hal-f401xe-8m
 f401xe.build.ldscript=stm32f401xe.ld
 f401xe.upload.maximum_size=524288
 f401xe.upload.file_type=bin
+f401xe.upload.params.quiet=no
 f401xe.upload.ram.maximum_size=98304
 f401xe.upload.flash.maximum_size=524288
+f401xe.menu.upload_method.texanestlink=texane/stlink
+f401xe.menu.upload_method.texanestlink.upload.tool=texanestlink
+f401xe.menu.upload_method.texanestlink.upload.protocol=stlink
+f401xe.menu.upload_method.texanestlink.upload.options=
 
+#################################################################################
+###                      STM32L476xx                                         ####
+#################################################################################
+l476xx.name = STM32L476xx
+l476xx.build.board=l476xx
+l476xx.build.core=stm32hal
+l476xx.build.mcu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
+l476xx.build.series=STM32L4xx
+l476xx.build.extra_flags=-DSTM32L476xx -DHSE_VALUE=8000000U
+l476xx.build.libhal=hal-l476xx-8m
+l476xx.build.ldscript=stm32l476xx.ld
+l476xx.upload.maximum_size=1024000
+l476xx.upload.file_type=bin
+l476xx.upload.params.quiet=no
+l476xx.upload.ram.maximum_size=131072
+l476xx.upload.flash.maximum_size=1024000
+l476xx.menu.upload_method.texanestlink=texane/stlink
+l476xx.menu.upload_method.texanestlink.upload.tool=texanestlink
+l476xx.menu.upload_method.texanestlink.upload.protocol=stlink
+l476xx.menu.upload_method.texanestlink.upload.options=
+
+#################################################################################
+###                              END                                         ####
+#################################################################################

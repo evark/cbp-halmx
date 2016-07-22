@@ -94,7 +94,6 @@
 				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
-				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
@@ -120,10 +119,9 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="blink2-f401xe">
-				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="build/${TARGET_NAME}" />
-				<Option external_deps="../system/lib/libhal-f103xb.a;" />
+				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
@@ -133,18 +131,15 @@
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
-					<Add directory="../system/cmsis/include" />
-					<Add directory="../system/cmsis/include/f4" />
-					<Add directory="../system/stm32f401xe" />
+					<Add directory="system/CMSIS/STM32F4xx/Include" />
+					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-mthumb" />
-					<Add option="-nostdlib" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -152,10 +147,9 @@
 				</ExtraCommands>
 			</Target>
 			<Target title="blink3-f401xe">
-				<Option output="build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="build/${TARGET_NAME}" />
-				<Option external_deps="../system/lib/libhal-f103xb.a;" />
+				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
@@ -165,18 +159,15 @@
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
-					<Add directory="../system/cmsis/include" />
-					<Add directory="../system/cmsis/include/f4" />
-					<Add directory="../system/stm32f401xe" />
+					<Add directory="system/CMSIS/STM32F4xx/Include" />
+					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-mthumb" />
-					<Add option="-nostdlib" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -298,6 +289,34 @@
 					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
 				</ExtraCommands>
 			</Target>
+			<Target title="uart1-f401xe">
+				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="_build/${TARGET_NAME}" />
+				<Option type="5" />
+				<Option compiler="arm-elf-gcc" />
+				<Compiler>
+					<Add option="-mthumb" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-DSTM32F401xE" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="system/CMSIS/STM32F4xx/Include" />
+					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+				</Compiler>
+				<Linker>
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-Tstm32f401xe.ld" />
+					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+				</ExtraCommands>
+			</Target>
 		</Build>
 		<VirtualTargets>
 			<Add alias="ALL" targets="blink1-f103xb;blink2-f103xb;blink3-f103xb;blink1-f401xe;blink2-f401xe;blink3-f401xe;blink1-l476xx;blink2-l476xx;blink3-l476xx;" />
@@ -351,6 +370,9 @@
 		<Unit filename="tests/blink4/main.cpp">
 			<Option target="blink1-f103xb" />
 			<Option target="blink4-f103xb" />
+		</Unit>
+		<Unit filename="tests/uart1/main.cpp">
+			<Option target="uart1-f401xe" />
 		</Unit>
 		<Extensions>
 			<code_completion />

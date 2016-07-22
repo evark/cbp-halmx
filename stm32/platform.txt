@@ -73,8 +73,6 @@ recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}"  "-L{build.path}"
 recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
 
 
-
-
 ## Save hex
 recipe.output.tmp_file={build.project_name}.bin
 recipe.output.save_file={build.project_name}.{build.variant}.bin
@@ -88,3 +86,11 @@ recipe.output.save_file={build.project_name}.{build.variant}.bin
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
 recipe.size.regex=^(?:\.text|\.data|\.rodata|\.text.align|\.ARM.exidx)\s+([0-9]+).*
 recipe.size.regex.data=^(?:\.data|\.bss|\.noinit)\s+([0-9]+).*
+
+tools.texanestlink.cmd=st-flash
+tools.texanestlink.cmd.windows=st-flash.exe
+tools.texanestlink.cmd.macosx=st-flash.mac
+tools.texanestlink.path={runtime.hardware.path}/stm32/tools
+tools.texanestlink.upload.params.verbose=
+tools.texanestlink.upload.params.quiet=
+tools.texanestlink.upload.pattern="{path}/{cmd}" --reset write "{build.path}/{build.project_name}.bin" 0x08000000
