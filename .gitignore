@@ -8,5 +8,5 @@
 *.layout
 *.save
 /tests/build/
-/_backup/
-/_build/
+/stm32/_backup/
+/stm32/_build/
