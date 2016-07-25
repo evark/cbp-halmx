@@ -79,13 +79,13 @@
 			<Add alias="ALL" targets="libhal-f103xb-8m;libhal-f401xe-8m;libhal-l476xx-8m;libhal-f411xe-8m;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-Os" />
+			<Add option="-O0" />
 			<Add option="-Wshadow" />
 			<Add option="-Wredundant-decls" />
 			<Add option="-Wundef" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="-g" />
+			<Add option="-g3" />
 			<Add option="-std=gnu11" />
 			<Add option="-nostdlib" />
 			<Add option="-fno-common" />
@@ -99,8 +99,6 @@
 			<Add directory="system/libstm32" />
 		</Compiler>
 		<Linker>
-			<Add option="-Os" />
-			<Add option="-L../stm32/libopencm3/lib" />
 			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
 			<Add option="-Wl,--gc-sections" />
 			<Add option="-mthumb" />
