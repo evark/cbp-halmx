@@ -41,7 +41,7 @@ int main(void)
     while (1)
   {
         HAL_GPIO_TogglePin(LEDPORT, LEDPIN);
-		for (int i = 0; i < 800000; i++)	/* Wait a bit. */
+		for (int i = 0; i < 80000; i++)	/* Wait a bit. */
 			__asm__("nop");
   }
 }

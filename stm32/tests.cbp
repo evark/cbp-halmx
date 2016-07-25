@@ -322,13 +322,13 @@
 			<Add alias="ALL" targets="blink1-f103xb;blink2-f103xb;blink3-f103xb;blink1-f401xe;blink2-f401xe;blink3-f401xe;blink1-l476xx;blink2-l476xx;blink3-l476xx;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-Os" />
+			<Add option="-O0" />
 			<Add option="-Wshadow" />
 			<Add option="-Wredundant-decls" />
 			<Add option="-Wundef" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="-g" />
+			<Add option="-g3" />
 			<Add option="-std=gnu11" />
 			<Add option="-nostdlib" />
 			<Add option="-fno-common" />
@@ -368,7 +368,6 @@
 			<Option target="blink3-l476xx" />
 		</Unit>
 		<Unit filename="tests/blink4/main.cpp">
-			<Option target="blink1-f103xb" />
 			<Option target="blink4-f103xb" />
 		</Unit>
 		<Unit filename="tests/uart1/main.cpp">
@@ -378,7 +377,11 @@
 			<code_completion />
 			<envvars />
 			<lib_finder disable_auto="1" />
-			<debugger />
+			<debugger>
+				<remote_debugging>
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor reset init&#x0A;load _build/${TARGET_NAME}/${TARGET_NAME}" />
+				</remote_debugging>
+			</debugger>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
