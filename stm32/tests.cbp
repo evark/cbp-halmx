@@ -345,6 +345,38 @@
 					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
 				</ExtraCommands>
 			</Target>
+			<Target title="mbed1-f401xe">
+				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="_build/${TARGET_NAME}" />
+				<Option type="5" />
+				<Option compiler="arm-elf-gcc" />
+				<Compiler>
+					<Add option="-mthumb" />
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-DSTM32F401xE" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="system/CMSIS/STM32F4xx/Include" />
+					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="tests/mbed1/api" />
+					<Add directory="tests/mbed1/hal" />
+					<Add directory="tests/mbed1/stm32" />
+					<Add directory="tests/mbed1/variants" />
+				</Compiler>
+				<Linker>
+					<Add option="-mcpu=cortex-m4" />
+					<Add option="-mfloat-abi=hard" />
+					<Add option="-mfpu=fpv4-sp-d16" />
+					<Add option="-Tstm32f401xe.ld" />
+					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+				</ExtraCommands>
+			</Target>
 		</Build>
 		<VirtualTargets>
 			<Add alias="ALL" targets="blink1-f103xb;blink2-f103xb;blink3-f103xb;blink1-f401xe;blink2-f401xe;blink3-f401xe;blink1-l476xx;blink2-l476xx;blink3-l476xx;" />
@@ -399,6 +431,74 @@
 		</Unit>
 		<Unit filename="tests/blink4/main.cpp">
 			<Option target="blink4-f103xb" />
+		</Unit>
+		<Unit filename="tests/mbed1/api/DigitalOut.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/api/mbed.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/api/mbed_assert.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/api/mbed_error.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/api/platform.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/common/gpio.c">
+			<Option compilerVar="CC" />
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/common/pinmap_common.c">
+			<Option compilerVar="CC" />
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/hal/gpio_api.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/hal/pinmap.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/main.cpp">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/stm32/PeripheralPins.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/stm32/common_objects.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/stm32/gpio_api.c">
+			<Option compilerVar="CC" />
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/stm32/gpio_object.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/stm32/pinmap.c">
+			<Option compilerVar="CC" />
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/variants/PeripheralNames.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/variants/PeripheralPins.c">
+			<Option compilerVar="CC" />
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/variants/PinNames.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/variants/PortNames.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/variants/device.h">
+			<Option target="mbed1-f401xe" />
+		</Unit>
+		<Unit filename="tests/mbed1/variants/objects.h">
+			<Option target="mbed1-f401xe" />
 		</Unit>
 		<Unit filename="tests/uart1/main.cpp">
 			<Option target="uart1-f401xe" />
