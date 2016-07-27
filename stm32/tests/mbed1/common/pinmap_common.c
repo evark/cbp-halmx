@@ -29,7 +29,7 @@ void pinmap_pinout(PinName pin, const PinMap *map) {
         }
         map++;
     }
-    error("could not pinout");
+//    error("could not pinout");
 }
 
 uint32_t pinmap_merge(uint32_t a, uint32_t b) {
@@ -44,7 +44,7 @@ uint32_t pinmap_merge(uint32_t a, uint32_t b) {
         return a;
 
     // mis-match error case
-    error("pinmap mis-match");
+//    error("pinmap mis-match");
     return (uint32_t)NC;
 }
 
@@ -64,7 +64,7 @@ uint32_t pinmap_peripheral(PinName pin, const PinMap* map) {
         return (uint32_t)NC;
     peripheral = pinmap_find_peripheral(pin, map);
     if ((uint32_t)NC == peripheral) // no mapping available
-        error("pinmap not found for peripheral");
+//        error("pinmap not found for peripheral");
     return peripheral;
 }
 
