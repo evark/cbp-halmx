@@ -1,3 +1,8 @@
+/*
+    PLAIN PROJECT - for debug
+*/
+
+
 #include <cmsis.h>
 
 volatile int i=0;

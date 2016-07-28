@@ -2,7 +2,7 @@
 
 /*
 
- Simple Blink Test with HAL_Delay (Systick working) and IRQ SysTick vector relocation in RAM
+TEST for HAL UART functions
 
 */
 #ifdef STM32F103xB

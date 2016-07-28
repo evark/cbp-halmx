@@ -1845,7 +1845,6 @@
 		</Unit>
 		<Unit filename="system/libstm32/cmsis_nvic.c">
 			<Option compilerVar="CC" />
-			<Option target="libhal-f103xb-8m" />
 		</Unit>
 		<Unit filename="system/libstm32/cmsis_nvic.h">
 			<Option target="libhal-f103xb-8m" />
