@@ -14,13 +14,12 @@
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
-					<Add option="-mthumb" />
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-DSTM32F103xB" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/STM32F1xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
 				</Compiler>
 			</Target>
 			<Target title="libhal-f401xe-8m">
@@ -30,14 +29,13 @@
 				<Option type="2" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 			</Target>
 			<Target title="libhal-l476xx-8m">
@@ -47,14 +45,13 @@
 				<Option type="2" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32L476xx" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32L4xx/Include" />
-					<Add directory="system/STM32L4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32L4xx_HAL_Driver/Inc" />
 				</Compiler>
 			</Target>
 			<Target title="libhal-f411xe-8m">
@@ -64,14 +61,13 @@
 				<Option type="2" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F411xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -79,13 +75,14 @@
 			<Add alias="ALL" targets="libhal-f103xb-8m;libhal-f401xe-8m;libhal-l476xx-8m;libhal-f411xe-8m;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-O0" />
+			<Add option="-Og" />
+			<Add option="-mthumb" />
 			<Add option="-Wshadow" />
 			<Add option="-Wredundant-decls" />
 			<Add option="-Wundef" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="-g3" />
+			<Add option="-ggdb" />
 			<Add option="-std=gnu11" />
 			<Add option="-nostdlib" />
 			<Add option="-fno-common" />
@@ -299,1544 +296,1544 @@
 		<Unit filename="system/CMSIS/STM32L4xx/Include/system_stm32l4xx.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cec.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cec.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_conf.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_crc.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_crc.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dac_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_eth.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_eth.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_hcd.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_hcd.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2s.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2s.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_irda.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_irda.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nand.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nand.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nor.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_nor.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pccard.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pccard.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sd.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_smartcard.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_smartcard.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sram.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_sram.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_usart.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_wwdg.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_wwdg.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_fsmc.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_fsmc.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_sdmmc.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cec.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cec.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_crc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dac_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_eth.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_eth.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_hcd.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_hcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2s.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2s.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_irda.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_irda.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_iwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_msp_template.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_msp_template.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nand.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nand.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nor.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_nor.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pccard.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pccard.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_smartcard.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_smartcard.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sram.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_sram.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_usart.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_usart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_wwdg.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_wwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_fsmc.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_fsmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_sdmmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dfsdm.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dfsdm.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h">
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c">
+		<Unit filename="system/HALMX/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32_assert_template.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32_assert_template.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_can.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_can.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_comp.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_comp.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_conf.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_conf.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_crc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_crc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_crc_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_crc_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cryp.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cryp.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cryp_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cryp_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dfsdm.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dfsdm.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_firewall.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_firewall.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_hcd.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_hcd.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_irda.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_irda.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_irda_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_irda_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_iwdg.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_iwdg.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_lcd.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_lcd.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_lptim.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_lptim.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_nand.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_nand.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_nor.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_nor.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_opamp.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_opamp.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_opamp_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_opamp_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_qspi.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_qspi.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rng.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rng.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sai.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sai.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sd.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sd.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smartcard.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smartcard.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smartcard_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smartcard_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smbus.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smbus.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sram.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sram.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_swpmi.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_swpmi.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tsc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tsc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_usart.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_usart.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_usart_ex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_usart_ex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_wwdg.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_wwdg.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_bus.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_comp.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_comp.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_cortex.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_cortex.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dac.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dac.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_exti.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_exti.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_fmc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_fmc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_i2c.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_i2c.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_iwdg.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_lptim.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_lptim.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_lpuart.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_lpuart.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_opamp.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_opamp.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_pwr.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_pwr.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rcc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rng.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rng.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rtc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_rtc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_sdmmc.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_sdmmc.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_spi.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_swpmi.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_swpmi.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_system.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_system.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_tim.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usb.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usb.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_utils.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_utils.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_wwdg.h">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_wwdg.h">
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_adc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_adc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_adc_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_adc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_can.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_can.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_comp.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_comp.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_crc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_crc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_crc_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_crc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cryp.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cryp.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cryp_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cryp_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dac.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dac.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dac_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dac_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dfsdm.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dfsdm.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_firewall.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_firewall.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_hcd.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_hcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_irda.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_irda.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_iwdg.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_iwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_lcd.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_lcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_lptim.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_lptim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_msp_template.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_msp_template.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_nand.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_nand.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_nor.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_nor.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_opamp.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_opamp.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_opamp_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_opamp_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pcd.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pcd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pcd_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pcd_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_qspi.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_qspi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rng.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rng.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rtc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rtc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rtc_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rtc_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sai.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sai.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sd.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sd.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_smartcard.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_smartcard.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_smartcard_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_smartcard_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_smbus.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_smbus.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sram.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_sram.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_swpmi.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_swpmi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tsc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tsc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_usart.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_usart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_wwdg.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_wwdg.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_adc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_adc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_comp.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_comp.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_crc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_crc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_crs.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_crs.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_dac.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_dac.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_dma.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_dma.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_exti.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_exti.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_fmc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_fmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_gpio.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_gpio.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_i2c.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_i2c.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_lptim.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_lptim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_lpuart.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_lpuart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_opamp.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_opamp.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_pwr.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_pwr.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_rcc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_rcc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_rng.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_rng.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_rtc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_rtc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_sdmmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_spi.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_spi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_swpmi.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_swpmi.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_tim.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_tim.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_usart.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_usart.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_usb.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_usb.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_utils.c">
+		<Unit filename="system/HALMX/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_utils.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>

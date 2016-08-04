@@ -14,13 +14,12 @@
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
-					<Add option="-mthumb" />
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-DSTM32F103xB" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/STM32F1xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m3" />
@@ -41,14 +40,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -69,14 +67,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32L476xx" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32L4xx/Include" />
-					<Add directory="system/STM32L4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32L4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -98,13 +95,12 @@
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
-					<Add option="-mthumb" />
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-DSTM32F103xB" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/STM32F1xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m3" />
@@ -125,14 +121,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -153,14 +148,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32L476xx" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32L4xx/Include" />
-					<Add directory="system/STM32L4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32L4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -188,7 +182,7 @@
 					<Add option="-DSTM32F103xB" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/STM32F1xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m3" />
@@ -209,14 +203,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -238,14 +231,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32L476xx" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32L4xx/Include" />
-					<Add directory="system/STM32L4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32L4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -267,13 +259,12 @@
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
-					<Add option="-mthumb" />
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-DSTM32F103xB" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/STM32F1xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m3" />
@@ -294,14 +285,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -323,14 +313,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32L476xx" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32L4xx/Include" />
-					<Add directory="system/STM32L4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32L4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -352,13 +341,12 @@
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
-					<Add option="-mthumb" />
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-DSTM32F103xB" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/STM32F1xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m3" />
@@ -379,14 +367,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
 					<Add option="-mcpu=cortex-m4" />
@@ -407,14 +394,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 					<Add directory="tests/mbed1/api" />
 					<Add directory="tests/mbed1/hal" />
 					<Add directory="tests/mbed1/stm32" />
@@ -439,14 +425,13 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mthumb" />
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-DSTM32F401xE" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F4xx/Include" />
-					<Add directory="system/STM32F4xx_HAL_Driver/Inc" />
+					<Add directory="system/HALMX/STM32F4xx_HAL_Driver/Inc" />
 					<Add directory="tests/mbed1/api" />
 					<Add directory="tests/mbed1/hal" />
 					<Add directory="tests/mbed1/stm32" />
@@ -469,13 +454,14 @@
 			<Add alias="ALL" targets="blank-f103xb;blank-f401xe;blank-l476xx;blink1-f103xb;blink1-f401xe;blink1-l476xx;blink2-f103xb;blink2-f401xe;blink2-l476xx;blink3-f103xb;blink3-f401xe;blink3-l476xx;blink4-f103xb;uart1-f401xe;mbed1-ex1-f401xe;mbed1-ex2-f401xe;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-O0" />
+			<Add option="-Og" />
+			<Add option="-mthumb" />
 			<Add option="-Wshadow" />
 			<Add option="-Wredundant-decls" />
 			<Add option="-Wundef" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
-			<Add option="-g3" />
+			<Add option="-ggdb" />
 			<Add option="-std=gnu11" />
 			<Add option="-nostdlib" />
 			<Add option="-fno-common" />
