@@ -1,3 +1,4 @@
 # cbp-halmx
-STM32 HALMX projects using Code::Blocks IDE or Arduino IDE
+Code::Blocks project for developing applications for STM32 MCUs using HALMX and GCC
+
 
