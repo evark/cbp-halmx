@@ -52,7 +52,7 @@ l476xx.build.mcu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
 l476xx.build.series=STM32L4xx
 l476xx.build.extra_flags=-DSTM32L476xx -DHSE_VALUE=8000000U
 l476xx.build.libhal=hal-l476xx-8m
-l476xx.build.ldscript=stm32l476xx.ld
+l476xx.build.ldscript=stm32l476xg.ld
 l476xx.upload.maximum_size=1024000
 l476xx.upload.file_type=bin
 l476xx.upload.params.quiet=no

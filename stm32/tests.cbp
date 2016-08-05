@@ -4,14 +4,14 @@
 	<Project>
 		<Option title="tests" />
 		<Option pch_mode="2" />
-		<Option compiler="gnu_gcc_compiler_for_arm_5" />
+		<Option compiler="arm-elf-gcc" />
 		<Build>
 			<Target title="blank-f103xb">
 				<Option output="_build/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-msoft-float" />
@@ -38,7 +38,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -71,7 +71,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -85,7 +85,7 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476rgt.ld" />
+					<Add option="-Tstm32l476xg.ld" />
 					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
 					<Add option="-lstdc++" />
 					<Add option="-lsupc++" />
@@ -104,7 +104,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-msoft-float" />
@@ -131,7 +131,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -164,7 +164,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -178,7 +178,7 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476rgt.ld" />
+					<Add option="-Tstm32l476xg.ld" />
 					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
 					<Add option="-lstdc++" />
 					<Add option="-lsupc++" />
@@ -197,7 +197,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-mthumb" />
@@ -225,7 +225,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -259,7 +259,7 @@
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -273,7 +273,7 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476rgt.ld" />
+					<Add option="-Tstm32l476xg.ld" />
 					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
 					<Add option="-lstdc++" />
 					<Add option="-lsupc++" />
@@ -292,7 +292,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-msoft-float" />
@@ -319,7 +319,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -353,7 +353,7 @@
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option external_deps="../system/lib/libhal-f103xb.a;" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -367,7 +367,7 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476rgt.ld" />
+					<Add option="-Tstm32l476xg.ld" />
 					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
 					<Add option="-lstdc++" />
 					<Add option="-lsupc++" />
@@ -386,7 +386,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m3" />
 					<Add option="-msoft-float" />
@@ -413,7 +413,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -446,7 +446,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
@@ -483,7 +483,7 @@
 				<Option working_dir="" />
 				<Option object_output="_build/${TARGET_NAME}" />
 				<Option type="5" />
-				<Option compiler="gnu_gcc_compiler_for_arm_5" />
+				<Option compiler="arm-elf-gcc" />
 				<Compiler>
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
