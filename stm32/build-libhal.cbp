@@ -95,15 +95,6 @@
 			<Add directory="system/CMSIS/Include" />
 			<Add directory="system/include" />
 		</Compiler>
-		<Linker>
-			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
-			<Add option="-Wl,--gc-sections" />
-			<Add option="-mthumb" />
-			<Add option="-nostartfiles" />
-			<Add option="--specs=nano.specs" />
-			<Add option="-Wl,--no-check-sections" />
-			<Add option="-Wl,-static" />
-		</Linker>
 		<Unit filename="system/CMSIS/Include/arm_common_tables.h" />
 		<Unit filename="system/CMSIS/Include/arm_const_structs.h" />
 		<Unit filename="system/CMSIS/Include/arm_math.h" />
