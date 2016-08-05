@@ -6,6 +6,7 @@ Features:
   - Using HALMX as library
   - Vendors files untouched (HALMX)
   - Dynamic Vectors in RAM
+  - Startup in C from https://github.com/micro-os-plus/cortexm-startup (under development)
 
 
 Targets/Boards
