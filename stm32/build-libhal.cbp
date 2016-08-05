@@ -1874,13 +1874,34 @@
 		<Unit filename="system/src/common/trace_impl.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="system/src/f1/system_stm32f1xx.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/src/f1/vectors_stm32f103xb.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
 		<Unit filename="system/src/f4/system_stm32f4xx.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
+			<Option target="libhal-f411xe-8m" />
 		</Unit>
 		<Unit filename="system/src/f4/vectors_stm32f401xe.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
+		</Unit>
+		<Unit filename="system/src/f4/vectors_stm32f411xe.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f411xe-8m" />
+		</Unit>
+		<Unit filename="system/src/l4/system_stm32l4xx.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-l476xx-8m" />
+		</Unit>
+		<Unit filename="system/src/l4/vectors_stm32l476xx.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-l476xx-8m" />
 		</Unit>
 		<Extensions>
 			<code_completion />

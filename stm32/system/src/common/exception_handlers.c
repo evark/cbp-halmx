@@ -5,7 +5,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "ExceptionHandlers.h"
+#include "cortexm/ExceptionHandlers.h"
 #include "cmsis.h"
 #include "semihosting.h"
 #include "Trace.h"

@@ -131,6 +131,8 @@ void __attribute__ ((weak, alias ("Default_Handler")))
 FPU_IRQHandler(void);
 void __attribute__ ((weak, alias ("Default_Handler")))
 SPI4_IRQHandler(void);
+void __attribute__ ((weak, alias ("Default_Handler")))
+SPI5_IRQHandler(void);
 
 // ----------------------------------------------------------------------------
 
@@ -265,6 +267,7 @@ pHandler __isr_vectors[] =
     0,                                 // Reserved
     0,                                 // Reserved
     SPI4_IRQHandler,                   // SPI4
+    SPI5_IRQHandler,                   // SPI5
 };
 
 // ----------------------------------------------------------------------------
