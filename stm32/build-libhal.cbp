@@ -95,15 +95,6 @@
 			<Add directory="system/CMSIS/Include" />
 			<Add directory="system/include" />
 		</Compiler>
-		<Linker>
-			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
-			<Add option="-Wl,--gc-sections" />
-			<Add option="-mthumb" />
-			<Add option="-nostartfiles" />
-			<Add option="--specs=nano.specs" />
-			<Add option="-Wl,--no-check-sections" />
-			<Add option="-Wl,-static" />
-		</Linker>
 		<Unit filename="system/CMSIS/Include/arm_common_tables.h" />
 		<Unit filename="system/CMSIS/Include/arm_const_structs.h" />
 		<Unit filename="system/CMSIS/Include/arm_math.h" />
@@ -1837,57 +1828,27 @@
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-<<<<<<< HEAD
-		<Unit filename="system/src/_initialize_hardware.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="system/include/Trace.h" />
+		<Unit filename="system/include/cmsis.h" />
+		<Unit filename="system/include/cmsis_nvic.h" />
+		<Unit filename="system/include/cortexm/ExceptionHandlers.h" />
+		<Unit filename="system/include/semihosting.h" />
 		<Unit filename="system/src/cmsis_nvic.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="system/src/f1/startup_stm32f103xb.S">
-			<Option target="libhal-f103xb-8m" />
-		</Unit>
-		<Unit filename="system/src/f1/system_stm32f1xx.c">
-			<Option compilerVar="CC" />
-			<Option target="libhal-f103xb-8m" />
-		</Unit>
-		<Unit filename="system/src/f4/startup_stm32f401xe.S">
-=======
-		<Unit filename="system/src/common/Trace.c">
+		<Unit filename="system/src/cortexm/_initialize_hardware.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="system/src/common/_cxx.cpp" />
-		<Unit filename="system/src/common/_exit.c">
+		<Unit filename="system/src/cortexm/_reset_hardware.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="system/src/common/_initialize_hardware.c">
+		<Unit filename="system/src/cortexm/exception_handlers.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="system/src/common/_reset_hardware.c">
+		<Unit filename="system/src/diag/Trace.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="system/src/common/_sbrk.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="system/src/common/_startup.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="system/src/common/_syscalls.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="system/src/common/_write.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="system/src/common/assert.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="system/src/common/cmsis_nvic.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="system/src/common/exception_handlers.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="system/src/common/trace_impl.c">
+		<Unit filename="system/src/diag/trace_impl.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="system/src/f1/system_stm32f1xx.c">
@@ -1900,27 +1861,13 @@
 		</Unit>
 		<Unit filename="system/src/f4/system_stm32f4xx.c">
 			<Option compilerVar="CC" />
->>>>>>> origin/develop
 			<Option target="libhal-f401xe-8m" />
-		</Unit>
-		<Unit filename="system/src/f4/startup_stm32f411xe.S">
 			<Option target="libhal-f411xe-8m" />
 		</Unit>
-<<<<<<< HEAD
-		<Unit filename="system/src/f4/system_stm32f4xx.c">
-=======
 		<Unit filename="system/src/f4/vectors_stm32f401xe.c">
->>>>>>> origin/develop
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
-			<Option target="libhal-f411xe-8m" />
 		</Unit>
-<<<<<<< HEAD
-		<Unit filename="system/src/l4/startup_stm32l476xx.S">
-			<Option target="libhal-l476xx-8m" />
-		</Unit>
-		<Unit filename="system/src/l4/system_stm32l4xx.c">
-=======
 		<Unit filename="system/src/f4/vectors_stm32f411xe.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f411xe-8m" />
@@ -1930,11 +1877,26 @@
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
 		<Unit filename="system/src/l4/vectors_stm32l476xx.c">
->>>>>>> origin/develop
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/src/stm32_it.c">
+		<Unit filename="system/src/newlib/_cxx.cpp" />
+		<Unit filename="system/src/newlib/_exit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/newlib/_sbrk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/newlib/_startup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/newlib/_syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/newlib/_write.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/newlib/assert.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
