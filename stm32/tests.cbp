@@ -225,7 +225,13 @@
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-Tstm32f103xb.ld" />
-					<Add option="-Wl,--start-group  -lhal-f103xb-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f103xb-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
