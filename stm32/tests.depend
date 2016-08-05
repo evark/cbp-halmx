@@ -1,0 +1,380 @@
+# depslib dependency file v1.0
+1470320803 source:/home/vsa/projects/hardware/stm32/cbp-halmx/stm32/tests/blank/main.cpp
+	<cmsis.h>
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/include/cmsis.h
+	"stm32f1xx.h"
+	"stm32f4xx.h"
+	"stm32f4xx.h"
+	"stm32l4xx.h"
+	"cmsis_nvic.h"
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l4xx.h
+	"stm32l431xx.h"
+	"stm32l432xx.h"
+	"stm32l433xx.h"
+	"stm32l442xx.h"
+	"stm32l443xx.h"
+	"stm32l451xx.h"
+	"stm32l452xx.h"
+	"stm32l462xx.h"
+	"stm32l471xx.h"
+	"stm32l475xx.h"
+	"stm32l476xx.h"
+	"stm32l485xx.h"
+	"stm32l486xx.h"
+	"stm32l496xx.h"
+	"stm32l4a6xx.h"
+	"stm32l4r5xx.h"
+	"stm32l4r9xx.h"
+	"stm32l4s5xx.h"
+	"stm32l4s9xx.h"
+	"stm32l4xx_hal.h"
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l431xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/Include/core_cm4.h
+	<stdint.h>
+	"core_cmInstr.h"
+	"core_cmFunc.h"
+	"core_cmSimd.h"
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/Include/core_cmInstr.h
+	"cmsis_armcc.h"
+	"cmsis_armcc_V6.h"
+	"cmsis_gcc.h"
+	<cmsis_iar.h>
+	<cmsis_ccs.h>
+	<cmsis_csm.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/Include/cmsis_armcc.h
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/Include/cmsis_armcc_V6.h
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/Include/cmsis_gcc.h
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/Include/core_cmFunc.h
+	"cmsis_armcc.h"
+	"cmsis_armcc_V6.h"
+	"cmsis_gcc.h"
+	<cmsis_iar.h>
+	<cmsis_ccs.h>
+	<cmsis_csm.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/Include/core_cmSimd.h
+	"cmsis_armcc.h"
+	"cmsis_armcc_V6.h"
+	"cmsis_gcc.h"
+	<cmsis_iar.h>
+	<cmsis_ccs.h>
+	<cmsis_csm.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/system_stm32l4xx.h
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l432xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l433xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l442xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l443xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l471xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l475xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l476xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l485xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470320801 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/CMSIS/STM32L4xx/Include/stm32l486xx.h
+	"core_cm4.h"
+	"system_stm32l4xx.h"
+	<stdint.h>
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h
+	"stm32l4xx_hal_conf.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_conf.h
+	"stm32l4xx_hal_rcc.h"
+	"stm32l4xx_hal_gpio.h"
+	"stm32l4xx_hal_dma.h"
+	"stm32l4xx_hal_dfsdm.h"
+	"stm32l4xx_hal_cortex.h"
+	"stm32l4xx_hal_adc.h"
+	"stm32l4xx_hal_can.h"
+	"stm32l4xx_hal_comp.h"
+	"stm32l4xx_hal_crc.h"
+	"stm32l4xx_hal_cryp.h"
+	"stm32l4xx_hal_dac.h"
+	"stm32l4xx_hal_firewall.h"
+	"stm32l4xx_hal_flash.h"
+	"stm32l4xx_hal_sram.h"
+	"stm32l4xx_hal_nor.h"
+	"stm32l4xx_hal_nand.h"
+	"stm32l4xx_hal_i2c.h"
+	"stm32l4xx_hal_iwdg.h"
+	"stm32l4xx_hal_lcd.h"
+	"stm32l4xx_hal_lptim.h"
+	"stm32l4xx_hal_opamp.h"
+	"stm32l4xx_hal_pwr.h"
+	"stm32l4xx_hal_qspi.h"
+	"stm32l4xx_hal_rng.h"
+	"stm32l4xx_hal_rtc.h"
+	"stm32l4xx_hal_sai.h"
+	"stm32l4xx_hal_sd.h"
+	"stm32l4xx_hal_smbus.h"
+	"stm32l4xx_hal_spi.h"
+	"stm32l4xx_hal_swpmi.h"
+	"stm32l4xx_hal_tim.h"
+	"stm32l4xx_hal_tsc.h"
+	"stm32l4xx_hal_uart.h"
+	"stm32l4xx_hal_usart.h"
+	"stm32l4xx_hal_irda.h"
+	"stm32l4xx_hal_smartcard.h"
+	"stm32l4xx_hal_wwdg.h"
+	"stm32l4xx_hal_pcd.h"
+	"stm32l4xx_hal_hcd.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_rcc_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h
+	"stm32l4xx.h"
+	"Legacy/stm32_hal_legacy.h"
+	<stdio.h>
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_gpio_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dfsdm.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_adc_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_can.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_comp.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_crc.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_crc_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_crc_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cryp.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_cryp_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cryp_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_dac_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dac_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_firewall.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_flash_ex.h"
+	"stm32l4xx_hal_flash_ramfunc.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sram.h
+	"stm32l4xx_ll_fmc.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_fmc.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_nor.h
+	"stm32l4xx_ll_fmc.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_nand.h
+	"stm32l4xx_ll_fmc.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_i2c_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_iwdg.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_lcd.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_lptim.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_opamp.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_opamp_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_opamp_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_pwr_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_qspi.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rng.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_rtc_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sai.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_sd.h
+	"stm32l4xx_ll_sdmmc.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_sdmmc.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smbus.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_spi_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_swpmi.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_tim_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tsc.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_uart_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_usart.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_usart_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_usart_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_irda.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_irda_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_irda_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smartcard.h
+	"stm32l4xx_hal_def.h"
+	"stm32l4xx_hal_smartcard_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_smartcard_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_wwdg.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd.h
+	"stm32l4xx_ll_usb.h"
+	"stm32l4xx_hal_pcd_ex.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usb.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pcd_ex.h
+	"stm32l4xx_hal_def.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/HALMX/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_hcd.h
+	"stm32l4xx_ll_usb.h"
+
+1470387186 /home/vsa/projects/hardware/stm32/cbp-halmx/stm32/system/include/cmsis_nvic.h
+	"cmsis.h"
+
+1470320803 source:/home/vsa/projects/hardware/stm32/cbp-halmx/stm32/tests/blink1/main.cpp
+	<cmsis.h>
+

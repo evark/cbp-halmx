@@ -16,7 +16,7 @@ compiler.path={runtime.tools.arm-none-eabi-gcc.path}/bin/
 compiler.c.cmd=arm-none-eabi-gcc
 compiler.c.flags=-mcpu={build.mcu} -mthumb -c -g -Os {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -MMD  -DUSE_HAL_DRIVER
 compiler.c.elf.cmd=arm-none-eabi-gcc
-compiler.c.elf.libs=-l{build.libhal} -lc -lgcc -lnosys 
+compiler.c.elf.libs=-lstdc++ -lsupc++ -lm -lgcc -lc -lnosys 
 compiler.c.elf.flags=-Os -Wl,--gc-sections -save-temps
 compiler.S.cmd=arm-none-eabi-gcc
 compiler.S.flags=-c -g -x assembler-with-cpp
@@ -28,7 +28,7 @@ compiler.objcopy.cmd=arm-none-eabi-objcopy
 compiler.objcopy.eep.flags=-O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0
 compiler.elf2hex.flags=-O binary
 compiler.elf2hex.cmd=arm-none-eabi-objcopy
-compiler.ldflags=-mcpu={build.mcu} -mthumb -Os -nostdlib -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align -Wl,-static "-L{build.system.path}/link" 
+compiler.ldflags=-mcpu={build.mcu} -mthumb -Os -nostdlib -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align -Wl,-static "-L{build.system.path}/lib" "-L{build.system.path}/ld" 
 compiler.size.cmd=arm-none-eabi-size
 compiler.define=-DARDUINO=
 
@@ -44,7 +44,7 @@ compiler.S.extra_flags=
 compiler.ar.extra_flags=
 compiler.elf2hex.extra_flags=
 
-compiler.arm.cmsis.path="-I{build.system.path}/CMSIS/Include" "-I{build.system.path}/CMSIS/{build.series}/Include" "-I{build.system.path}/{build.series}_HAL_Driver/Inc" "-I{build.system.path}/libstm32"
+compiler.arm.cmsis.path="-I{build.system.path}/CMSIS/Include" "-I{build.system.path}/CMSIS/{build.series}/Include" "-I{build.system.path}/HALMX/{build.series}_HAL_Driver/Inc" "-I{build.system.path}/include"
 
 # Compile patterns
 # ----------------
@@ -64,7 +64,7 @@ archive_file_path={build.path}/{archive_file}
 recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
 
 ## Combine gc-sections, archives, and objects
-recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}"  "-L{build.path}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} "-T{build.variant.path}/{build.ldscript}" "-Wl,-Map,{build.path}/{build.project_name}.map" --specs=nano.specs --specs=nosys.specs {compiler.ldflags} -o "{build.path}/{build.project_name}.elf" {object_files} -Wl,--start-group "{build.path}/{archive_file}" {compiler.c.elf.libs} -Wl,--end-group
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}"  "-L{build.path}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} "-T{build.variant.path}/{build.ldscript}" "-Wl,-Map,{build.path}/{build.project_name}.map" --specs=nano.specs {compiler.ldflags} -o "{build.path}/{build.project_name}.elf" {object_files} -Wl,-whole-archive "{build.path}/{archive_file}" -l{build.libhal} -Wl,-no-whole-archive {compiler.c.elf.libs}
 
 ## Create output (bin file)
 #recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"

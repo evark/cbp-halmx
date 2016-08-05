@@ -26,7 +26,13 @@
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-Tstm32f103xb.ld" />
-					<Add option="-Wl,--start-group  -lhal-f103xb-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f103xb-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -53,7 +59,13 @@
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f401xe-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -79,8 +91,14 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476xx.ld" />
-					<Add option="-Wl,--start-group  -lhal-l476xx-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Tstm32l476xg.ld" />
+					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -107,7 +125,13 @@
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-Tstm32f103xb.ld" />
-					<Add option="-Wl,--start-group  -lhal-f103xb-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f103xb-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -134,7 +158,13 @@
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f401xe-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -160,8 +190,14 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476xx.ld" />
-					<Add option="-Wl,--start-group  -lhal-l476xx-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Tstm32l476xg.ld" />
+					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -216,7 +252,13 @@
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f401xe-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -243,8 +285,14 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476xx.ld" />
-					<Add option="-Wl,--start-group  -lhal-l476xx-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Tstm32l476xg.ld" />
+					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -271,7 +319,13 @@
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-Tstm32f103xb.ld" />
-					<Add option="-Wl,--start-group  -lhal-f103xb-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f103xb-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -298,7 +352,13 @@
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f401xe-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -325,8 +385,14 @@
 					<Add option="-mcpu=cortex-m4" />
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
-					<Add option="-Tstm32l476xx.ld" />
-					<Add option="-Wl,--start-group  -lhal-l476xx-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Tstm32l476xg.ld" />
+					<Add option="-Wl,-whole-archive -lhal-l476xx-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -353,7 +419,13 @@
 					<Add option="-msoft-float" />
 					<Add option="-mfix-cortex-m3-ldrd" />
 					<Add option="-Tstm32f103xb.ld" />
-					<Add option="-Wl,--start-group  -lhal-f103xb-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f103xb-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -380,7 +452,13 @@
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f401xe-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -411,7 +489,13 @@
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f401xe-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -442,7 +526,13 @@
 					<Add option="-mfloat-abi=hard" />
 					<Add option="-mfpu=fpv4-sp-d16" />
 					<Add option="-Tstm32f401xe.ld" />
-					<Add option="-Wl,--start-group  -lhal-f401xe-8m -lc -lgcc -lnosys -Wl,--end-group" />
+					<Add option="-Wl,-whole-archive -lhal-f401xe-8m -Wl,-no-whole-archive" />
+					<Add option="-lstdc++" />
+					<Add option="-lsupc++" />
+					<Add option="-lm" />
+					<Add option="-lgcc" />
+					<Add option="-lc" />
+					<Add option="-lnosys" />
 				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
@@ -478,11 +568,12 @@
 			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
 			<Add option="-Wl,--gc-sections" />
 			<Add option="-mthumb" />
-			<Add option="-nostdlib" />
+			<Add option="-nostartfiles" />
 			<Add option="--specs=nano.specs" />
 			<Add option="-Wl,--no-check-sections" />
 			<Add option="-Wl,-static" />
-			<Add directory="system/link" />
+			<Add directory="system/lib" />
+			<Add directory="system/ld" />
 		</Linker>
 		<Unit filename="tests/blank/main.cpp">
 			<Option target="blank-f401xe" />

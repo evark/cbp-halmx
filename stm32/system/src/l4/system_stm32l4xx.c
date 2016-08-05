@@ -107,7 +107,19 @@
   * @{
   */
 
-#include <cmsis.h>
+#include "stm32l4xx.h"
+
+#if !defined  (HSE_VALUE)
+  #define HSE_VALUE    ((uint32_t)8000000) /*!< Value of the External oscillator in Hz */
+#endif /* HSE_VALUE */
+
+#if !defined  (MSI_VALUE)
+  #define MSI_VALUE    ((uint32_t)4000000) /*!< Value of the Internal oscillator in Hz*/
+#endif /* MSI_VALUE */
+
+#if !defined  (HSI_VALUE)
+  #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+#endif /* HSI_VALUE */
 
 /**
   * @}
@@ -125,18 +137,6 @@
   * @{
   */
 
-#if !defined  (HSE_VALUE)
-  #define HSE_VALUE    ((uint32_t)8000000) /*!< Value of the External oscillator in Hz */
-#endif /* HSE_VALUE */
-
-#if !defined  (MSI_VALUE)
-  #define MSI_VALUE    ((uint32_t)4000000) /*!< Value of the Internal oscillator in Hz*/
-#endif /* MSI_VALUE */
-
-#if !defined  (HSI_VALUE)
-  #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
-#endif /* HSI_VALUE */
-
 /************************* Miscellaneous Configuration ************************/
 /*!< Uncomment the following line if you need to relocate your vector Table in
      Internal SRAM. */
@@ -152,11 +152,6 @@
   * @{
   */
 
-// Select the clock sources (default is PLL_MSI) to start with (0=OFF, 1=ON)
-#define USE_PLL_HSE_EXTC (1) // Use external clock
-#define USE_PLL_HSE_XTAL (1) // Use external xtal
-#define USE_PLL_HSI      (0) // Use HSI/MSI internal clock (0=MSI, 1=HSI)
-#define DEBUG_MCO        (0) // Output the MCO on PA8 for debugging (0=OFF, 1=SYSCLK, 2=HSE, 3=HSI, 4=MSI)
 /**
   * @}
   */
@@ -185,16 +180,6 @@
 /** @addtogroup STM32L4xx_System_Private_FunctionPrototypes
   * @{
   */
-
-#if (USE_PLL_HSE_XTAL != 0) || (USE_PLL_HSE_EXTC != 0)
-uint8_t SetSysClock_PLL_HSE(uint8_t bypass);
-#endif
-
-#if (USE_PLL_HSI != 0)
-uint8_t SetSysClock_PLL_HSI(void);
-#endif
-
-uint8_t SetSysClock_PLL_MSI(void);
 
 /**
   * @}
@@ -241,18 +226,6 @@ void SystemInit(void)
 #else
   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
 #endif
-
-  /* Configure the Cube driver */
-  SystemCoreClock = MSI_VALUE; // At this stage the MSI is used as system clock
-  HAL_Init();
-
-  /* Configure the System clock source, PLL Multiplier and Divider factors,
-     AHB/APBx prescalers and Flash settings */
-  SetSysClock();
-
-  /* Reset the timer to avoid issues after the RAM initialization */
-//  TIM_MST_RESET_ON;
-//  TIM_MST_RESET_OFF;
 }
 
 /**
@@ -365,249 +338,7 @@ void SystemCoreClockUpdate(void)
   SystemCoreClock >>= tmp;
 }
 
-/**
-  * @brief  Configures the System clock source, PLL Multiplier and Divider factors,
-  *               AHB/APBx prescalers and Flash settings
-  * @note   This function should be called only once the RCC clock configuration
-  *         is reset to the default reset state (done in SystemInit() function).
-  * @param  None
-  * @retval None
-  */
-void SetSysClock(void)
-{
-  /* 1- Try to start with HSE and external clock */
-#if USE_PLL_HSE_EXTC != 0
-  if (SetSysClock_PLL_HSE(1) == 0)
-#endif
-  {
-    /* 2- If fail try to start with HSE and external xtal */
-#if USE_PLL_HSE_XTAL != 0
-    if (SetSysClock_PLL_HSE(0) == 0)
-#endif
-    {
-      /* 3- If fail start with HSI or MSI clock */
-#if (USE_PLL_HSI != 0)
-      if (SetSysClock_PLL_HSI() == 0)
-#else
-      if (SetSysClock_PLL_MSI() == 0)
-#endif
-      {
-        while(1)
-        {
-          // [TODO] Put something here to tell the user that a problem occured...
-        }
-      }
-    }
-  }
 
-  // Output clock on MCO1 pin(PA8) for debugging purpose
-#if DEBUG_MCO == 1
-  HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_SYSCLK, RCC_MCODIV_1);
-#endif
-}
-
-#if (USE_PLL_HSE_XTAL != 0) || (USE_PLL_HSE_EXTC != 0)
-/******************************************************************************/
-/*            PLL (clocked by HSE) used as System clock source                */
-/******************************************************************************/
-uint8_t SetSysClock_PLL_HSE(uint8_t bypass)
-{
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-
-  // Used to gain time after DeepSleep in case HSI is used
-  if (__HAL_RCC_GET_FLAG(RCC_FLAG_HSIRDY) != RESET)
-  {
-    return 0;
-  }
-
-  // Select MSI as system clock source to allow modification of the PLL configuration
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
-  HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0);
-
-  // Enable HSE oscillator and activate PLL with HSE as source
-  RCC_OscInitStruct.OscillatorType        = RCC_OSCILLATORTYPE_HSE | RCC_OSCILLATORTYPE_HSI;
-  if (bypass == 0)
-  {
-    RCC_OscInitStruct.HSEState            = RCC_HSE_ON; // External 8 MHz xtal on OSC_IN/OSC_OUT
-  }
-  else
-  {
-    RCC_OscInitStruct.HSEState            = RCC_HSE_BYPASS; // External 8 MHz clock on OSC_IN
-  }
-  RCC_OscInitStruct.HSIState              = RCC_HSI_OFF;
-  RCC_OscInitStruct.PLL.PLLSource         = RCC_PLLSOURCE_HSE; // 8 MHz
-  RCC_OscInitStruct.PLL.PLLState          = RCC_PLL_ON;
-
-  // Non-USB configuration : sysclock = 80MHz
-  //RCC_OscInitStruct.PLL.PLLM              = 1; // VCO input clock = 8 MHz (8 MHz / 1)
-  //RCC_OscInitStruct.PLL.PLLN              = 20; // VCO output clock = 160 MHz (8 MHz * 20)
-  //RCC_OscInitStruct.PLL.PLLP              = 7; // PLLSAI3 clock = 22 MHz (160 MHz / 7)
-  //RCC_OscInitStruct.PLL.PLLQ              = 4; // USB clock (PLL48M1) = 40 MHz (160 MHz / 4) --> Not good for USB
-  //RCC_OscInitStruct.PLL.PLLR              = 2; // PLL clock = 80 MHz (160 MHz / 2)
-
-  // USB configuration : sysclock = 48 MHz
-  RCC_OscInitStruct.PLL.PLLM              = 1; // VCO input clock = 8 MHz (8 MHz / 1)
-  RCC_OscInitStruct.PLL.PLLN              = 24; // VCO output clock = 192 MHz (8 MHz * 24)
-  RCC_OscInitStruct.PLL.PLLP              = 7; // PLLSAI3 clock = 27.4 MHz (192 MHz / 7)
-  RCC_OscInitStruct.PLL.PLLQ              = 4; // USB clock (PLL48M1) = 48 MHz (192 MHz / 4) --> OK for USB
-  RCC_OscInitStruct.PLL.PLLR              = 4; // PLL clock = 48 MHz (192 MHz / 4)
-
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    return 0; // FAIL
-  }
-
-  // Select PLL clock as system clock source and configure the HCLK, PCLK1 and PCLK2 clocks dividers
-  RCC_ClkInitStruct.ClockType      = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
-  RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK; // 80 MHz or 48 MHz
-  RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;         // 80 MHz or 48 MHz
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;           // 80 MHz or 48 MHz
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;           // 80 MHz or 48 MHz
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
-  {
-    return 0; // FAIL
-  }
-
-  // Disable MSI Oscillator
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_MSI;
-  RCC_OscInitStruct.MSIState       = RCC_MSI_OFF;
-  RCC_OscInitStruct.PLL.PLLState   = RCC_PLL_NONE; // No PLL update
-  HAL_RCC_OscConfig(&RCC_OscInitStruct);
-
-  // Output clock on MCO1 pin(PA8) for debugging purpose
-#if DEBUG_MCO == 2
-  if (bypass == 0)
-    HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSE, RCC_MCODIV_2); // 4 MHz
-  else
-    HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSE, RCC_MCODIV_1); // 8 MHz
-#endif
-
-  return 1; // OK
-}
-#endif
-
-#if (USE_PLL_HSI != 0)
-/******************************************************************************/
-/*            PLL (clocked by HSI) used as System clock source                */
-/******************************************************************************/
-uint8_t SetSysClock_PLL_HSI(void)
-{
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-
-  // Select MSI as system clock source to allow modification of the PLL configuration
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
-  HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0);
-
-  // Enable HSI oscillator and activate PLL with HSI as source
-  RCC_OscInitStruct.OscillatorType       = RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState             = RCC_HSE_OFF;
-  RCC_OscInitStruct.HSIState             = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue  = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState         = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource        = RCC_PLLSOURCE_HSI; // 16 MHz
-  RCC_OscInitStruct.PLL.PLLM             = 2; // VCO input clock = 8 MHz (16 MHz / 2)
-  RCC_OscInitStruct.PLL.PLLN             = 20; // VCO output clock = 160 MHz (8 MHz * 20)
-  RCC_OscInitStruct.PLL.PLLP             = 7; // PLLSAI3 clock = 22 MHz (160 MHz / 7)
-  RCC_OscInitStruct.PLL.PLLQ             = 4; // USB clock (PLL48M1) = 40 MHz (160 MHz / 4) --> Not good for USB
-  RCC_OscInitStruct.PLL.PLLR             = 2; // PLL clock = 80 MHz (160 MHz / 2)
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    return 0; // FAIL
-  }
-
-  // Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2 clocks dividers
-  RCC_ClkInitStruct.ClockType      = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
-  RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK; // 80 MHz
-  RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;         // 80 MHz
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;           // 80 MHz
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;           // 80 MHz
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
-  {
-    return 0; // FAIL
-  }
-
-  // Disable MSI Oscillator
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_MSI;
-  RCC_OscInitStruct.MSIState       = RCC_MSI_OFF;
-  RCC_OscInitStruct.PLL.PLLState   = RCC_PLL_NONE; // No PLL update
-  HAL_RCC_OscConfig(&RCC_OscInitStruct);
-
-  // Output clock on MCO1 pin(PA8) for debugging purpose
-#if DEBUG_MCO == 3
-  HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_HSI, RCC_MCODIV_1); // 16 MHz
-#endif
-
-  return 1; // OK
-}
-#endif
-
-/******************************************************************************/
-/*            PLL (clocked by MSI) used as System clock source                */
-/******************************************************************************/
-uint8_t SetSysClock_PLL_MSI(void)
-{
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-
-  // Enable LSE Oscillator to automatically calibrate the MSI clock
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSE;
-  RCC_OscInitStruct.PLL.PLLState   = RCC_PLL_NONE; // No PLL update
-  RCC_OscInitStruct.LSEState       = RCC_LSE_ON; // External 32.768 kHz clock on OSC_IN/OSC_OUT
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) == HAL_OK) {
-    RCC->CR |= RCC_CR_MSIPLLEN; // Enable MSI PLL-mode
-  }
-
-  // Enable MSI oscillator and activate PLL with MSI as source
-  RCC_OscInitStruct.OscillatorType       = RCC_OSCILLATORTYPE_MSI | RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.MSIState             = RCC_MSI_ON;
-  RCC_OscInitStruct.HSEState             = RCC_HSE_OFF;
-  RCC_OscInitStruct.HSIState             = RCC_HSI_OFF;
-  RCC_OscInitStruct.MSIClockRange        = RCC_MSIRANGE_6;
-  RCC_OscInitStruct.MSICalibrationValue  = RCC_MSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState         = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource        = RCC_PLLSOURCE_MSI; // 4 MHz
-  RCC_OscInitStruct.PLL.PLLM             = 1; // VCO input clock = 4 MHz (4 MHz / 1)
-  RCC_OscInitStruct.PLL.PLLN             = 40; // VCO output clock = 160 MHz (4 MHz * 40)
-  RCC_OscInitStruct.PLL.PLLP             = 7; // PLLSAI3 clock = 22.86 MHz (160 MHz / 7)
-  RCC_OscInitStruct.PLL.PLLQ             = 4; // USB clock (PLL48M1) = 40 MHz (160 MHz / 4) --> Not good for USB
-  RCC_OscInitStruct.PLL.PLLR             = 2; // PLL clock = 80 MHz (160 MHz / 2)
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    return 0; // FAIL
-  }
-
-  // Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2 clocks dividers
-  RCC_ClkInitStruct.ClockType      = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
-  RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK; // 80 MHz
-  RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;         // 80 MHz
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;           // 80 MHz
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;           // 80 MHz
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
-  {
-    return 0; // FAIL
-  }
-
-  // Output clock on MCO1 pin(PA8) for debugging purpose
-#if DEBUG_MCO == 4
-  HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_MSI, RCC_MCODIV_2); // 2 MHz
-#endif
-
-  return 1; // OK
-}
-
-/**
-    20-07-2016  ADDED BY Evangelos Arkalis
-*/
-
-void SysTick_Handler(void)
-{
-  HAL_IncTick();
-  HAL_SYSTICK_IRQHandler();
-}
 /**
   * @}
   */
