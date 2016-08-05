@@ -7,7 +7,7 @@
 		<Option compiler="arm-elf-gcc" />
 		<Build>
 			<Target title="libhal-f103xb-8m">
-				<Option output="system/link/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
+				<Option output="system/lib/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
 				<Option object_output="_build/lib/${TARGET_NAME}" />
 				<Option type="2" />
@@ -23,7 +23,7 @@
 				</Compiler>
 			</Target>
 			<Target title="libhal-f401xe-8m">
-				<Option output="system/link/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
+				<Option output="system/lib/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
 				<Option object_output="_build/lib/${TARGET_NAME}" />
 				<Option type="2" />
@@ -39,7 +39,7 @@
 				</Compiler>
 			</Target>
 			<Target title="libhal-l476xx-8m">
-				<Option output="system/link/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
+				<Option output="system/lib/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
 				<Option object_output="_build/lib/${TARGET_NAME}" />
 				<Option type="2" />
@@ -55,7 +55,7 @@
 				</Compiler>
 			</Target>
 			<Target title="libhal-f411xe-8m">
-				<Option output="system/link/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
+				<Option output="system/lib/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
 				<Option object_output="_build/lib/${TARGET_NAME}" />
 				<Option type="2" />
@@ -75,13 +75,13 @@
 			<Add alias="ALL" targets="libhal-f103xb-8m;libhal-f401xe-8m;libhal-l476xx-8m;libhal-f411xe-8m;" />
 		</VirtualTargets>
 		<Compiler>
-			<Add option="-Og" />
 			<Add option="-mthumb" />
 			<Add option="-Wshadow" />
 			<Add option="-Wredundant-decls" />
 			<Add option="-Wundef" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
+			<Add option="-Og" />
 			<Add option="-ggdb" />
 			<Add option="-std=gnu11" />
 			<Add option="-nostdlib" />
@@ -93,7 +93,7 @@
 			<Add option="-pipe" />
 			<Add option="-DUSE_HAL_DRIVER" />
 			<Add directory="system/CMSIS/Include" />
-			<Add directory="system/libstm32" />
+			<Add directory="system/include" />
 		</Compiler>
 		<Linker>
 			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
@@ -1837,39 +1837,50 @@
 			<Option compilerVar="CC" />
 			<Option target="libhal-l476xx-8m" />
 		</Unit>
-		<Unit filename="system/libstm32/cmsis.h">
-			<Option target="libhal-f103xb-8m" />
-		</Unit>
-		<Unit filename="system/libstm32/cmsis_nvic.c">
+		<Unit filename="system/src/common/Trace.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="system/libstm32/cmsis_nvic.h">
-			<Option target="libhal-f103xb-8m" />
-		</Unit>
-		<Unit filename="system/libstm32/system_stm32f1xx.c">
+		<Unit filename="system/src/common/_cxx.cpp" />
+		<Unit filename="system/src/common/_exit.c">
 			<Option compilerVar="CC" />
-			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/libstm32/system_stm32f4xx.c">
+		<Unit filename="system/src/common/_initialize_hardware.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/_reset_hardware.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/_sbrk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/_startup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/_syscalls.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/_write.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/assert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/cmsis_nvic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/exception_handlers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/common/trace_impl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/f4/system_stm32f4xx.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f401xe-8m" />
-			<Option target="libhal-f411xe-8m" />
 		</Unit>
-		<Unit filename="system/libstm32/system_stm32l4xx.c">
+		<Unit filename="system/src/f4/vectors_stm32f401xe.c">
 			<Option compilerVar="CC" />
-			<Option target="libhal-l476xx-8m" />
-		</Unit>
-		<Unit filename="system/startup/startup_stm32f103xb.S">
-			<Option target="libhal-f103xb-8m" />
-		</Unit>
-		<Unit filename="system/startup/startup_stm32f401xe.S">
 			<Option target="libhal-f401xe-8m" />
-		</Unit>
-		<Unit filename="system/startup/startup_stm32f411xe.S">
-			<Option target="libhal-l476xx-8m" />
-		</Unit>
-		<Unit filename="system/startup/startup_stm32l476xx.S">
-			<Option target="libhal-l476xx-8m" />
 		</Unit>
 		<Extensions>
 			<code_completion />

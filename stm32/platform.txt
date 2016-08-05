@@ -44,7 +44,7 @@ compiler.S.extra_flags=
 compiler.ar.extra_flags=
 compiler.elf2hex.extra_flags=
 
-compiler.arm.cmsis.path="-I{build.system.path}/CMSIS/Include" "-I{build.system.path}/CMSIS/{build.series}/Include" "-I{build.system.path}/{build.series}_HAL_Driver/Inc" "-I{build.system.path}/libstm32"
+compiler.arm.cmsis.path="-I{build.system.path}/CMSIS/Include" "-I{build.system.path}/CMSIS/{build.series}/Include" "-I{build.system.path}/HALMX/{build.series}_HAL_Driver/Inc" "-I{build.system.path}/libstm32"
 
 # Compile patterns
 # ----------------
