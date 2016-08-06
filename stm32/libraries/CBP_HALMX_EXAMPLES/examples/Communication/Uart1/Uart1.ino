@@ -70,9 +70,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
 }
 
 
-/******************************************************************/
-
-int main(void)
+void setup()
 {
     /* GPIO Ports Clock Enable */
     __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -82,11 +80,12 @@ int main(void)
 
     gpio_setup_output(LEDPORT, LEDPIN);
     MX_USART2_UART_Init();
-    while (1)
-        {
-            uint8_t buf[]="A";
-            HAL_UART_Transmit(&huart2,buf,1,100);
-            gpio_toggle(LEDPORT, LEDPIN);
-            HAL_Delay(50);
-        }
+}
+
+void loop()
+{
+    uint8_t buf[]="A";
+    HAL_UART_Transmit(&huart2,buf,1,100);
+    gpio_toggle(LEDPORT, LEDPIN);
+    HAL_Delay(50);
 }

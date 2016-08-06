@@ -11,6 +11,7 @@ f103xb.build.series=STM32F1xx
 f103xb.build.extra_flags=-DSTM32F103xB -DHSE_VALUE=8000000U
 f103xb.build.libhal=hal-f103xb-8m
 f103xb.build.ldscript=stm32f103xb.ld
+f103xb.build.variant=
 f103xb.upload.maximum_size=131072
 f103xb.upload.file_type=bin
 f103xb.upload.params.quiet=no
@@ -20,6 +21,28 @@ f103xb.menu.upload_method.texanestlink=texane/stlink
 f103xb.menu.upload_method.texanestlink.upload.tool=texanestlink
 f103xb.menu.upload_method.texanestlink.upload.protocol=stlink
 f103xb.menu.upload_method.texanestlink.upload.options=
+
+#################################################################################
+###                      F103CB_BluePill                                     ####
+#################################################################################
+f103cb-bp.name = F103CB_BluePill
+f103cb-bp.build.board=f103cb-bp
+f103cb-bp.build.core=stm32hal
+f103cb-bp.build.mcu=cortex-m3 -msoft-float -mfix-cortex-m3-ldrd
+f103cb-bp.build.series=STM32F1xx
+f103cb-bp.build.extra_flags=-DSTM32F103xB -DHSE_VALUE=8000000U
+f103cb-bp.build.libhal=hal-f103xb-8m
+f103cb-bp.build.ldscript=stm32f103xb.ld
+f103cb-bp.build.variant=F103CB_BLUEPILL
+f103cb-bp.upload.maximum_size=131072
+f103cb-bp.upload.file_type=bin
+f103cb-bp.upload.params.quiet=no
+f103cb-bp.upload.ram.maximum_size=20480
+f103cb-bp.upload.flash.maximum_size=131072
+f103cb-bp.menu.upload_method.texanestlink=texane/stlink
+f103cb-bp.menu.upload_method.texanestlink.upload.tool=texanestlink
+f103cb-bp.menu.upload_method.texanestlink.upload.protocol=stlink
+f103cb-bp.menu.upload_method.texanestlink.upload.options=
 
 #################################################################################
 ###                      STM32F401xE                                         ####
@@ -32,6 +55,7 @@ f401xe.build.series=STM32F4xx
 f401xe.build.extra_flags=-DSTM32F401xE -DHSE_VALUE=8000000U
 f401xe.build.libhal=hal-f401xe-8m
 f401xe.build.ldscript=stm32f401xe.ld
+f401xe.build.variant=
 f401xe.upload.maximum_size=524288
 f401xe.upload.file_type=bin
 f401xe.upload.params.quiet=no

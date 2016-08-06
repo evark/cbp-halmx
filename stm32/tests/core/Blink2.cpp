@@ -1,3 +1,5 @@
+#include<Arduino.h>
+
 #ifdef STM32F103xB
 /* BLUE PILL */
 #define LEDPORT GPIOC
@@ -25,10 +27,7 @@ void gpio_setup_output(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
   HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
 }
 
-
-/******************************************************************/
-
-int main(void)
+void setup()
 {
     /* GPIO Ports Clock Enable */
     __HAL_RCC_GPIOA_CLK_ENABLE();
@@ -37,10 +36,12 @@ int main(void)
     __HAL_RCC_GPIOD_CLK_ENABLE();
 
     gpio_setup_output(LEDPORT, LEDPIN);
+}
 
-    while (1)
-        {
-            gpio_toggle(LEDPORT, LEDPIN);
-            HAL_Delay(50);
-        }
+/******************************************************************/
+
+void loop()
+{
+    gpio_toggle(LEDPORT, LEDPIN);
+    HAL_Delay(50);
 }

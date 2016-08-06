@@ -55,8 +55,6 @@ void __attribute__((weak)) __initialize_hardware(void)
   // Initialise the HAL Library; it must be the first function
   // to be executed before the call of any HAL function.
   HAL_Init();
-  __HAL_RCC_AFIO_CLK_ENABLE();
-  __HAL_AFIO_REMAP_SWJ_NOJTAG();
 
   // Enable HSE Oscillator and activate PLL with HSE as source
   SystemClock_Config();
