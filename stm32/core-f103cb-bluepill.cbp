@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="core-bluepill" />
+		<Option title="core-f103cb-bluepill" />
 		<Option pch_mode="2" />
 		<Option compiler="arm-elf-gcc" />
 		<Build>
 			<Target title="core">
-				<Option output="variants/F103CB_BLUEPILL/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option output="_build/F103CB_BLUEPILL/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="_build/F103CB_BLUEPILL/${TARGET_NAME}" />
 				<Option type="2" />
@@ -49,7 +49,7 @@
 					<Add option="-Tstm32f103xb.ld" />
 					<Add option="-Wl,-whole-archive" />
 					<Add option="-lhal-f103xb-8m" />
-					<Add option="variants/F103CB_BLUEPILL/libcore.a" />
+					<Add option="_build/F103CB_BLUEPILL/libcore.a" />
 					<Add option="-Wl,-no-whole-archive" />
 					<Add option="-lstdc++" />
 					<Add option="-lsupc++" />
@@ -86,7 +86,7 @@
 					<Add option="-Tstm32f103xb.ld" />
 					<Add option="-Wl,-whole-archive" />
 					<Add option="-lhal-f103xb-8m" />
-					<Add option="variants/F103CB_BLUEPILL/libcore.a" />
+					<Add option="_build/F103CB_BLUEPILL/libcore.a" />
 					<Add option="-Wl,-no-whole-archive" />
 					<Add option="-lstdc++" />
 					<Add option="-lsupc++" />
@@ -101,6 +101,9 @@
 				</ExtraCommands>
 			</Target>
 		</Build>
+		<VirtualTargets>
+			<Add alias="ALL" targets="core;Blink1;Blink2;" />
+		</VirtualTargets>
 		<Compiler>
 			<Add option="-mthumb" />
 			<Add option="-Wshadow" />
