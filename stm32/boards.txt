@@ -45,26 +45,26 @@ f103cb-bp.menu.upload_method.texanestlink.upload.protocol=stlink
 f103cb-bp.menu.upload_method.texanestlink.upload.options=
 
 #################################################################################
-###                      STM32F401xE                                         ####
+###                      F401RE_Nucleo                                       ####
 #################################################################################
-#f401xe.name = STM32F401xE
-#f401xe.build.board=f401xe
-#f401xe.build.core=stm32hal
-#f401xe.build.mcu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
-#f401xe.build.series=STM32F4xx
-#f401xe.build.extra_flags=-DSTM32F401xE -DHSE_VALUE=8000000U
-#f401xe.build.libhal=hal-f401xe-8m
-#f401xe.build.ldscript=stm32f401xe.ld
-#f401xe.build.variant=
-#f401xe.upload.maximum_size=524288
-#f401xe.upload.file_type=bin
-#f401xe.upload.params.quiet=no
-#f401xe.upload.ram.maximum_size=98304
-#f401xe.upload.flash.maximum_size=524288
-#f401xe.menu.upload_method.texanestlink=texane/stlink
-#f401xe.menu.upload_method.texanestlink.upload.tool=texanestlink
-#f401xe.menu.upload_method.texanestlink.upload.protocol=stlink
-#f401xe.menu.upload_method.texanestlink.upload.options=
+f401re-nucleo.name = F401RE_Nucleo
+f401re-nucleo.build.board=f401re-nucleo
+f401re-nucleo.build.core=stm32hal
+f401re-nucleo.build.mcu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
+f401re-nucleo.build.series=STM32F4xx
+f401re-nucleo.build.extra_flags=-DSTM32F401xE -DHSE_VALUE=8000000U
+f401re-nucleo.build.libhal=hal-f401xe-8m
+f401re-nucleo.build.ldscript=stm32f401xe.ld
+f401re-nucleo.build.variant=
+f401re-nucleo.upload.maximum_size=524288
+f401re-nucleo.upload.file_type=bin
+f401re-nucleo.upload.params.quiet=no
+f401re-nucleo.upload.ram.maximum_size=98304
+f401re-nucleo.upload.flash.maximum_size=524288
+f401re-nucleo.menu.upload_method.texanestlink=texane/stlink
+f401re-nucleo.menu.upload_method.texanestlink.upload.tool=texanestlink
+f401re-nucleo.menu.upload_method.texanestlink.upload.protocol=stlink
+f401re-nucleo.menu.upload_method.texanestlink.upload.options=
 
 #################################################################################
 ###                      L476RG_Nucleo                                       ####

@@ -4,6 +4,7 @@
 		<Project filename="build-libhal.cbp" />
 		<Project filename="tests.cbp" />
 		<Project filename="core-f103cb-bluepill.cbp" />
+		<Project filename="core-f401re-nucleo.cbp" />
 		<Project filename="core-l476rg-nucleo.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
