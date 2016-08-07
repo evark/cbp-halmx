@@ -1,3 +1,6 @@
+#include<Arduino.h>
+#include "usart.h"
+
 uint8_t buf[]="HELLO\n";
 
 void setup()

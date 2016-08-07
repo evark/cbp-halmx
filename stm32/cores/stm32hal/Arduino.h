@@ -22,6 +22,9 @@
 #include <string.h>
 #include <math.h>
 
+
+
+
 // some libraries and sketches depend on this
 // AVR stuff, assuming Arduino.h or WProgram.h
 // automatically includes it...
@@ -38,6 +41,10 @@ extern "C"{
 // Includes STM32 CMSIS
 #include <cmsis.h>
 
+  
+#include "usart.h"
+  
+  
 //#include "wiring_constants.h"
 
 #define clockCyclesPerMicrosecond() ( SystemCoreClock / 1000000L )

@@ -55,7 +55,7 @@ f401re-nucleo.build.series=STM32F4xx
 f401re-nucleo.build.extra_flags=-DSTM32F401xE -DHSE_VALUE=8000000U
 f401re-nucleo.build.libhal=hal-f401xe-8m
 f401re-nucleo.build.ldscript=stm32f401xe.ld
-f401re-nucleo.build.variant=
+f401re-nucleo.build.variant=F401RE_NUCLEO
 f401re-nucleo.upload.maximum_size=524288
 f401re-nucleo.upload.file_type=bin
 f401re-nucleo.upload.params.quiet=no

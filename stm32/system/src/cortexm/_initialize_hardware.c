@@ -52,17 +52,12 @@ void __attribute__((weak)) SystemClock_Config(void)
 
 void __attribute__((weak)) __initialize_hardware(void)
 {
-  // Initialise the HAL Library; it must be the first function
-  // to be executed before the call of any HAL function.
   HAL_Init();
-
-  // Enable HSE Oscillator and activate PLL with HSE as source
-  SystemClock_Config();
-
-  // Call the CSMSIS system clock routine to store the clock frequency
-  // in the SystemCoreClock global RAM location.
   SystemCoreClockUpdate();
-  // Initialize Again Tick after Clock Update
+  HAL_InitTick(TICK_INT_PRIORITY);
+
+  SystemClock_Config();
+  SystemCoreClockUpdate();
   HAL_InitTick(TICK_INT_PRIORITY);
 }
 

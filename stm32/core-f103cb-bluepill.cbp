@@ -12,16 +12,6 @@
 				<Option object_output="_build/F103CB_BLUEPILL/${TARGET_NAME}" />
 				<Option type="2" />
 				<Option compiler="arm-elf-gcc" />
-				<Compiler>
-					<Add option="-mcpu=cortex-m3" />
-					<Add option="-msoft-float" />
-					<Add option="-mfix-cortex-m3-ldrd" />
-					<Add option="-DSTM32F103xB" />
-					<Add option="-DHSE_VALUE=8000000U" />
-					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
-					<Add directory="variants/F103CB_BLUEPILL" />
-				</Compiler>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
 				</ExtraCommands>
@@ -32,32 +22,6 @@
 				<Option object_output="_build/F103CB_BLUEPILL/${TARGET_NAME}" />
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
-				<Compiler>
-					<Add option="-mcpu=cortex-m3" />
-					<Add option="-msoft-float" />
-					<Add option="-mfix-cortex-m3-ldrd" />
-					<Add option="-DSTM32F103xB" />
-					<Add option="-DHSE_VALUE=8000000U" />
-					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
-					<Add directory="variants/F103CB_BLUEPILL" />
-				</Compiler>
-				<Linker>
-					<Add option="-mcpu=cortex-m3" />
-					<Add option="-msoft-float" />
-					<Add option="-mfix-cortex-m3-ldrd" />
-					<Add option="-Tstm32f103xb.ld" />
-					<Add option="-Wl,-whole-archive" />
-					<Add option="-lhal-f103xb-8m" />
-					<Add option="_build/F103CB_BLUEPILL/libcore.a" />
-					<Add option="-Wl,-no-whole-archive" />
-					<Add option="-lstdc++" />
-					<Add option="-lsupc++" />
-					<Add option="-lm" />
-					<Add option="-lgcc" />
-					<Add option="-lc" />
-					<Add option="-lnosys" />
-				</Linker>
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
 					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
@@ -69,32 +33,17 @@
 				<Option object_output="_build/F103CB_BLUEPILL/${TARGET_NAME}" />
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
-				<Compiler>
-					<Add option="-mcpu=cortex-m3" />
-					<Add option="-msoft-float" />
-					<Add option="-mfix-cortex-m3-ldrd" />
-					<Add option="-DSTM32F103xB" />
-					<Add option="-DHSE_VALUE=8000000U" />
-					<Add directory="system/CMSIS/STM32F1xx/Include" />
-					<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
-					<Add directory="variants/F103CB_BLUEPILL" />
-				</Compiler>
-				<Linker>
-					<Add option="-mcpu=cortex-m3" />
-					<Add option="-msoft-float" />
-					<Add option="-mfix-cortex-m3-ldrd" />
-					<Add option="-Tstm32f103xb.ld" />
-					<Add option="-Wl,-whole-archive" />
-					<Add option="-lhal-f103xb-8m" />
-					<Add option="_build/F103CB_BLUEPILL/libcore.a" />
-					<Add option="-Wl,-no-whole-archive" />
-					<Add option="-lstdc++" />
-					<Add option="-lsupc++" />
-					<Add option="-lm" />
-					<Add option="-lgcc" />
-					<Add option="-lc" />
-					<Add option="-lnosys" />
-				</Linker>
+				<ExtraCommands>
+					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Uart1">
+				<Option output="_build/F103CB_BLUEPILL/${TARGET_NAME}/${TARGET_NAME}" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="_build/F103CB_BLUEPILL/${TARGET_NAME}" />
+				<Option type="5" />
+				<Option compiler="arm-elf-gcc" />
 				<ExtraCommands>
 					<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
 					<Add after="arm-none-eabi-objcopy  -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).bin" />
@@ -122,9 +71,17 @@
 			<Add option="-fno-exceptions" />
 			<Add option="-pipe" />
 			<Add option="-DUSE_HAL_DRIVER" />
+			<Add option="-mcpu=cortex-m3" />
+			<Add option="-msoft-float" />
+			<Add option="-mfix-cortex-m3-ldrd" />
+			<Add option="-DSTM32F103xB" />
+			<Add option="-DHSE_VALUE=8000000U" />
 			<Add directory="system/CMSIS/Include" />
 			<Add directory="system/include" />
 			<Add directory="cores/stm32hal" />
+			<Add directory="system/CMSIS/STM32F1xx/Include" />
+			<Add directory="system/HALMX/STM32F1xx_HAL_Driver/Inc" />
+			<Add directory="variants/F103CB_BLUEPILL" />
 		</Compiler>
 		<Linker>
 			<Add option="-Wl,-Map=$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).map,--cref" />
@@ -134,6 +91,20 @@
 			<Add option="--specs=nano.specs" />
 			<Add option="-Wl,--no-check-sections" />
 			<Add option="-Wl,-static" />
+			<Add option="-mcpu=cortex-m3" />
+			<Add option="-msoft-float" />
+			<Add option="-mfix-cortex-m3-ldrd" />
+			<Add option="-Tstm32f103xb.ld" />
+			<Add option="-Wl,-whole-archive" />
+			<Add option="-lhal-f103xb-8m" />
+			<Add option="_build/F103CB_BLUEPILL/libcore.a" />
+			<Add option="-Wl,-no-whole-archive" />
+			<Add option="-lstdc++" />
+			<Add option="-lsupc++" />
+			<Add option="-lm" />
+			<Add option="-lgcc" />
+			<Add option="-lc" />
+			<Add option="-lnosys" />
 			<Add directory="system/lib" />
 			<Add directory="system/ld" />
 		</Linker>
@@ -159,13 +130,27 @@
 		<Unit filename="tests/core/Blink2.cpp">
 			<Option target="Blink2" />
 		</Unit>
+		<Unit filename="tests/core/Uart1.cpp">
+			<Option target="Uart1" />
+		</Unit>
+		<Unit filename="variants/F103CB_BLUEPILL/rcc.c">
+			<Option compilerVar="CC" />
+			<Option target="core" />
+		</Unit>
+		<Unit filename="variants/F103CB_BLUEPILL/usart.c">
+			<Option compilerVar="CC" />
+			<Option target="core" />
+		</Unit>
+		<Unit filename="variants/F103CB_BLUEPILL/usart.h">
+			<Option target="core" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<lib_finder disable_auto="1" />
 			<debugger>
 				<remote_debugging>
-					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor reset init&#x0A;load _build/${TARGET_NAME}/${TARGET_NAME}" />
+					<options conn_type="0" serial_baud="115200" ip_address="localhost" ip_port="3333" additional_cmds="monitor reset init&#x0A;load _build/F103CB_BLUEPILL/${TARGET_NAME}/${TARGET_NAME}" />
 				</remote_debugging>
 			</debugger>
 		</Extensions>
