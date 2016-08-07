@@ -51,7 +51,7 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="ALL" targets="core;Blink1;Blink2;" />
+			<Add alias="ALL" targets="core;Blink1;Blink2;Uart1;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-mthumb" />
@@ -132,9 +132,6 @@
 		</Unit>
 		<Unit filename="tests/core/Uart1.cpp">
 			<Option target="Uart1" />
-		</Unit>
-		<Unit filename="variants/F401RE_NUCLEO/mxconstants.h">
-			<Option target="core" />
 		</Unit>
 		<Unit filename="variants/F401RE_NUCLEO/rcc.c">
 			<Option compilerVar="CC" />

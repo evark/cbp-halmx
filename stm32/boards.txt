@@ -77,6 +77,7 @@ l476rg-nucleo.build.series=STM32L4xx
 l476rg-nucleo.build.extra_flags=-DSTM32L476xx -DHSE_VALUE=8000000U
 l476rg-nucleo.build.libhal=hal-l476xx-8m
 l476rg-nucleo.build.ldscript=stm32l476xg.ld
+l476rg-nucleo.build.variant=L476RG_NUCLEO
 l476rg-nucleo.upload.maximum_size=1024000
 l476rg-nucleo.upload.file_type=bin
 l476rg-nucleo.upload.params.quiet=no

@@ -51,7 +51,7 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="ALL" targets="core;Blink1;Blink2;" />
+			<Add alias="ALL" targets="core;Blink1;Blink2;Uart1;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-mthumb" />
