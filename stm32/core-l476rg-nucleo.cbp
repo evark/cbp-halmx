@@ -111,7 +111,68 @@
 		<Unit filename="cores/stm32hal/Arduino.h">
 			<Option target="core" />
 		</Unit>
+		<Unit filename="cores/stm32hal/HardwareSerial.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/Print.cpp">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/Print.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/Printable.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/Stream.cpp">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/Stream.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/Tone.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/WCharacter.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/WInterrupts.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/WMath.cpp">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/WMath.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/WString.cpp">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/WString.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/WVariant.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/avr/dtostrf.c">
+			<Option compilerVar="CC" />
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/avr/dtostrf.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/avr/interrupt.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/avr/io.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/avr/pgmspace.h">
+			<Option target="core" />
+		</Unit>
 		<Unit filename="cores/stm32hal/binary.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/delay.h">
 			<Option target="core" />
 		</Unit>
 		<Unit filename="cores/stm32hal/itoa.c">
@@ -122,6 +183,30 @@
 			<Option target="core" />
 		</Unit>
 		<Unit filename="cores/stm32hal/main.cpp">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/new.cpp">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/pulse.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/wiring.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/wiring_analog.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/wiring_constants.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/wiring_digital.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/wiring_private.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="cores/stm32hal/wiring_shift.h">
 			<Option target="core" />
 		</Unit>
 		<Unit filename="tests/core/Blink1.cpp">
@@ -142,6 +227,9 @@
 			<Option target="core" />
 		</Unit>
 		<Unit filename="variants/L476RG_NUCLEO/usart.h">
+			<Option target="core" />
+		</Unit>
+		<Unit filename="variants/L476RG_NUCLEO/variant.h">
 			<Option target="core" />
 		</Unit>
 		<Extensions>

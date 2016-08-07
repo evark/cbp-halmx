@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2015 Arduino LLC.  All right reserved.
+  Copyright (c) 2014 Arduino.  All right reserved.
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -16,36 +16,18 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#define ARDUINO_MAIN
-#include "Arduino.h"
+#ifndef _WIRING_MATH_
+#define _WIRING_MATH_
 
-// Weak empty variant initialization function.
-// May be redefined by variant files.
-void initVariant() __attribute__((weak));
-void initVariant() { }
+extern long random( long ) ;
+extern long random( long, long ) ;
+extern void randomSeed( uint32_t dwSeed ) ;
+extern long map( long, long, long, long, long ) ;
 
-/*
- * \brief Main entry point of Arduino application
- */
-int main( void )
-{
-//  init();
+extern uint16_t makeWord( uint16_t w ) ;
+extern uint16_t makeWord( uint8_t h, uint8_t l ) ;
 
-//  initVariant();
+#define word(...) makeWord(__VA_ARGS__)
 
-//  delay(1);
-#if defined(USBCON)
-//  USBDevice.init();
-//  USBDevice.attach();
-#endif
 
-  setup();
-
-  for (;;)
-  {
-    loop();
-//    if (serialEventRun) serialEventRun();
-  }
-
-  return 0;
-}
+#endif /* _WIRING_MATH_ */

@@ -95,6 +95,9 @@
 			<Add directory="system/CMSIS/Include" />
 			<Add directory="system/include" />
 		</Compiler>
+		<ExtraCommands>
+			<Add after="arm-none-eabi-size $(TARGET_OUTPUT_FILE)" />
+		</ExtraCommands>
 		<Unit filename="system/CMSIS/Include/arm_common_tables.h" />
 		<Unit filename="system/CMSIS/Include/arm_const_structs.h" />
 		<Unit filename="system/CMSIS/Include/arm_math.h" />

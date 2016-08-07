@@ -16,36 +16,23 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#define ARDUINO_MAIN
-#include "Arduino.h"
+#pragma once
 
-// Weak empty variant initialization function.
-// May be redefined by variant files.
-void initVariant() __attribute__((weak));
-void initVariant() { }
+#include <stdint.h>
+#include <stdio.h>
+#include <stdarg.h>
 
-/*
- * \brief Main entry point of Arduino application
- */
-int main( void )
-{
-//  init();
-
-//  initVariant();
-
-//  delay(1);
-#if defined(USBCON)
-//  USBDevice.init();
-//  USBDevice.attach();
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-  setup();
+#include "cmsis.h"
 
-  for (;;)
-  {
-    loop();
-//    if (serialEventRun) serialEventRun();
-  }
+#include "wiring_constants.h"
 
-  return 0;
-}
+#ifdef __cplusplus
+} // extern "C"
+
+#include "HardwareSerial.h"
+
+#endif

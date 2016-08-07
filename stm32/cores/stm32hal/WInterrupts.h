@@ -16,36 +16,39 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#define ARDUINO_MAIN
-#include "Arduino.h"
+#ifndef _WIRING_INTERRUPTS_
+#define _WIRING_INTERRUPTS_
 
-// Weak empty variant initialization function.
-// May be redefined by variant files.
-void initVariant() __attribute__((weak));
-void initVariant() { }
+#include <stdint.h>
 
-/*
- * \brief Main entry point of Arduino application
- */
-int main( void )
-{
-//  init();
-
-//  initVariant();
-
-//  delay(1);
-#if defined(USBCON)
-//  USBDevice.init();
-//  USBDevice.attach();
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-  setup();
+//      LOW 0
+//      HIGH 1
+#define CHANGE 2
+#define FALLING 3
+#define RISING 4
 
-  for (;;)
-  {
-    loop();
-//    if (serialEventRun) serialEventRun();
-  }
+#define DEFAULT 1
+#define EXTERNAL 0
 
-  return 0;
+typedef void (*voidFuncPtr)(void);
+
+/*
+ * \brief Specifies a named Interrupt Service Routine (ISR) to call when an interrupt occurs.
+ *        Replaces any previous function that was attached to the interrupt.
+ */
+void attachInterrupt(uint32_t pin, voidFuncPtr callback, uint32_t mode);
+
+/*
+ * \brief Turns off the given interrupt.
+ */
+void detachInterrupt(uint32_t pin);
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif
