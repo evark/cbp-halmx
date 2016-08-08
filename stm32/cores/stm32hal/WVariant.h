@@ -70,12 +70,12 @@ extern "C" {
 typedef struct _PinDescription
 {
   GPIO_TypeDef            *GPIO;
-  uint16_t                bit;
+//  uint16_t                bit;
   uint16_t                pin;
-  uint8_t                 attr;
-  uint8_t                 pwm_instance;
-  uint8_t                 pwm_channel;
-  uint8_t                 adc_input;
+//  uint8_t                 attr;
+//  uint8_t                 pwm_instance;
+//  uint8_t                 pwm_channel;
+//  uint8_t                 adc_input;
 } PinDescription ;
 
 /* Pins table to be instantiated into variant.cpp */
