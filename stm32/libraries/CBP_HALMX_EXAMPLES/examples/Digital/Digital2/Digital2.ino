@@ -1,4 +1,7 @@
-
+/*
+ * BEWARE - BluePill does not have BUTTON, define it!!!
+ */
+ 
 int dtime;
 
 void setup()
