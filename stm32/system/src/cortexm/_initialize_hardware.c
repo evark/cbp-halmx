@@ -52,13 +52,12 @@ void __attribute__((weak)) SystemClock_Config(void)
 
 void __attribute__((weak)) __initialize_hardware(void)
 {
-  HAL_Init();
-  SystemCoreClockUpdate();
-  HAL_InitTick(TICK_INT_PRIORITY);
 
-  SystemClock_Config();
-  SystemCoreClockUpdate();
-  HAL_InitTick(TICK_INT_PRIORITY);
+  HAL_Init();                       // Initialized with internal Clock
+
+  SystemClock_Config();             // Call weak function
+  SystemCoreClockUpdate();          // Update clock
+  HAL_InitTick(TICK_INT_PRIORITY);  // Initialize again Tick
 }
 
 // ----------------------------------------------------------------------------
