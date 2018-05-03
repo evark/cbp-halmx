@@ -88,7 +88,7 @@ void pinMode( uint32_t ulPin, uint32_t ulMode )
         GPIO_InitStruct.Pull = GPIO_NOPULL;
         break ;
     }
-    GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
     HAL_GPIO_Init(digitalPinToPort(ulPin), &GPIO_InitStruct);
 }
 

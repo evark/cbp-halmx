@@ -511,7 +511,7 @@
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
-		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_msp_template.c">
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_mmc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
@@ -595,7 +595,47 @@
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_adc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_crc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_dac.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_dma.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_exti.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
 		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_fsmc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_pwr.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rtc.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
@@ -603,7 +643,23 @@
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_tim.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usart.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
 		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f103xb-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.c">
 			<Option compilerVar="CC" />
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
