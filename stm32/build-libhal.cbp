@@ -6,6 +6,21 @@
 		<Option pch_mode="2" />
 		<Option compiler="arm-elf-gcc" />
 		<Build>
+			<Target title="libhal-f030x6-8m">
+				<Option output="system/lib/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="_build/lib/${TARGET_NAME}" />
+				<Option type="2" />
+				<Option compiler="arm-elf-gcc" />
+				<Compiler>
+					<Add option="-mcpu=cortex-m0" />
+					<Add option="-msoft-float" />
+					<Add option="-DSTM32F030x6" />
+					<Add option="-DHSE_VALUE=8000000U" />
+					<Add directory="system/CMSIS/STM32F0xx/Include" />
+					<Add directory="system/HALMX/STM32F0xx_HAL_Driver/Inc" />
+				</Compiler>
+			</Target>
 			<Target title="libhal-f103xb-8m">
 				<Option output="system/lib/${TARGET_NAME}.a" prefix_auto="0" extension_auto="0" />
 				<Option working_dir="" />
@@ -289,6 +304,437 @@
 		</Unit>
 		<Unit filename="system/CMSIS/STM32L4xx/Include/system_stm32l4xx.h">
 			<Option target="libhal-l476xx-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32_assert_template.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_adc_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_can.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cec.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_comp.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_conf.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_cortex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_crc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_crc_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dac_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_flash_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2s.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_irda.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_irda_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_iwdg.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pcd_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_pwr_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rcc_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_rtc_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_smartcard.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_smartcard_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_smbus.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_spi_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tsc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_usart.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_usart_ex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_wwdg.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_adc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_comp.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_cortex.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_crc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_crs.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_dac.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_dma.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_exti.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_i2c.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_iwdg.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_pwr.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rcc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_rtc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_spi.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_system.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_tim.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usart.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_utils.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_wwdg.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_can.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cec.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_comp.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_crc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_crc_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dac_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2s.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_irda.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_iwdg.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rtc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rtc_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smartcard.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smartcard_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_smbus.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_spi_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tsc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_usart.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_wwdg.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_adc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_comp.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_crc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_crs.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_dac.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_dma.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_exti.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_gpio.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_i2c.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_pwr.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_rcc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_rtc.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_spi.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_tim.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usart.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/HALMX/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_utils.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
 		</Unit>
 		<Unit filename="system/HALMX/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
 			<Option target="libhal-f103xb-8m" />
