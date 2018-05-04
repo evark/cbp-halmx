@@ -12,6 +12,7 @@ Features:
   - Semihosting support (preliminary-under development)
 
 Targets/Boards
+  - STM32F030F4 : Cheap "STM32F030 Demo Board" (WIP)
   - STM32F103xB : BluePill (2$ "STM32 Minimum System Development Board" with STM32F103C8T6)
   - STM32F401xE : Nucleo
   - STM32F411xE : Nucleo
