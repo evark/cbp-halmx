@@ -13,15 +13,15 @@
 				<Option type="5" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mcpu=cortex-m0" />
 					<Add option="-msoft-float" />
+					<Add option="-mcpu=cortex-m0" />
 					<Add option="-DSTM32F030x6" />
 					<Add option="-DHSE_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F0xx/Include" />
 					<Add directory="system/HALMX/STM32F0xx_HAL_Driver/Inc" />
 				</Compiler>
 				<Linker>
-					<Add option="-mcpu=cortex-m3" />
+					<Add option="-mcpu=cortex-m0" />
 					<Add option="-msoft-float" />
 					<Add option="-Tstm32f030x6.ld" />
 					<Add option="-Wl,-whole-archive -lhal-f030x6-8m -Wl,-no-whole-archive" />
@@ -578,7 +578,7 @@
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="ALL" targets="blank-f103xb;blank-f401xe;blank-l476xx;blink1-f103xb;blink1-f401xe;blink1-l476xx;blink2-f103xb;blink2-f401xe;blink2-l476xx;blink3-f103xb;blink3-f401xe;blink3-l476xx;blink4-f103xb;uart1-f401xe;mbed1-ex1-f401xe;mbed1-ex2-f401xe;" />
+			<Add alias="ALL" targets="blank-f030x6;blank-f103xb;blank-f401xe;blank-l476xx;blink1-f103xb;blink1-f401xe;blink1-l476xx;blink2-f103xb;blink2-f401xe;blink2-l476xx;blink3-f103xb;blink3-f401xe;blink3-l476xx;blink4-f103xb;uart1-f401xe;mbed1-ex1-f401xe;mbed1-ex2-f401xe;" />
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-mthumb" />
