@@ -2,13 +2,11 @@
   ******************************************************************************
   * @file    stm32l4xx_ll_lptim.c
   * @author  MCD Application Team
-  * @version V1.5.1
-  * @date    31-May-2016
   * @brief   LPTIM LL module driver.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2016 STMicroelectronics</center></h2>
+  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -63,23 +61,23 @@
 /** @addtogroup LPTIM_LL_Private_Macros
   * @{
   */
-#define IS_LPTIM_CLOCK_SOURCE(__VALUE__) (((__VALUE__) == LL_LPTIM_CLK_SOURCE_INTERNAL) \
-                                       || ((__VALUE__) == LL_LPTIM_CLK_SOURCE_EXTERNAL))
+#define IS_LL_LPTIM_CLOCK_SOURCE(__VALUE__) (((__VALUE__) == LL_LPTIM_CLK_SOURCE_INTERNAL) \
+                                          || ((__VALUE__) == LL_LPTIM_CLK_SOURCE_EXTERNAL))
 
-#define IS_LPTIM_CLOCK_PRESCALER(__VALUE__) (((__VALUE__) == LL_LPTIM_PRESCALER_DIV1)   \
-                                          || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV2)   \
-                                          || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV4)   \
-                                          || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV8)   \
-                                          || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV16)  \
-                                          || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV32)  \
-                                          || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV64)  \
-                                          || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV128))
+#define IS_LL_LPTIM_CLOCK_PRESCALER(__VALUE__) (((__VALUE__) == LL_LPTIM_PRESCALER_DIV1)   \
+                                             || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV2)   \
+                                             || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV4)   \
+                                             || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV8)   \
+                                             || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV16)  \
+                                             || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV32)  \
+                                             || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV64)  \
+                                             || ((__VALUE__) == LL_LPTIM_PRESCALER_DIV128))
 
-#define IS_LPTIM_WAVEFORM(__VALUE__) (((__VALUE__) == LL_LPTIM_OUTPUT_WAVEFORM_PWM) \
-                                   || ((__VALUE__) == LL_LPTIM_OUTPUT_WAVEFORM_SETONCE))
+#define IS_LL_LPTIM_WAVEFORM(__VALUE__) (((__VALUE__) == LL_LPTIM_OUTPUT_WAVEFORM_PWM) \
+                                      || ((__VALUE__) == LL_LPTIM_OUTPUT_WAVEFORM_SETONCE))
 
-#define IS_LPTIM_OUTPUT_POLARITY(__VALUE__) (((__VALUE__) == LL_LPTIM_OUTPUT_POLARITY_REGULAR) \
-                                          || ((__VALUE__) == LL_LPTIM_OUTPUT_POLARITY_INVERSE))
+#define IS_LL_LPTIM_OUTPUT_POLARITY(__VALUE__) (((__VALUE__) == LL_LPTIM_OUTPUT_POLARITY_REGULAR) \
+                                             || ((__VALUE__) == LL_LPTIM_OUTPUT_POLARITY_INVERSE))
 /**
   * @}
   */
@@ -114,7 +112,7 @@ ErrorStatus LL_LPTIM_DeInit(LPTIM_TypeDef* LPTIMx)
     LL_APB1_GRP1_ForceReset(LL_APB1_GRP1_PERIPH_LPTIM1);
     LL_APB1_GRP1_ReleaseReset(LL_APB1_GRP1_PERIPH_LPTIM1);  
   } 
-#if defined(LPTIM2)  
+#if defined(LPTIM2)
   else if (LPTIMx == LPTIM2)
   { 
     LL_APB1_GRP2_ForceReset(LL_APB1_GRP2_PERIPH_LPTIM2);
@@ -169,10 +167,10 @@ ErrorStatus LL_LPTIM_Init(LPTIM_TypeDef * LPTIMx, LL_LPTIM_InitTypeDef* LPTIM_In
   {
   /* Check the parameters */
   assert_param(IS_LPTIM_INSTANCE(LPTIMx)); 
-  assert_param(IS_LPTIM_CLOCK_SOURCE(LPTIM_InitStruct->ClockSource));
-  assert_param(IS_LPTIM_CLOCK_PRESCALER(LPTIM_InitStruct->Prescaler));
-  assert_param(IS_LPTIM_WAVEFORM(LPTIM_InitStruct->Waveform));
-  assert_param(IS_LPTIM_OUTPUT_POLARITY(LPTIM_InitStruct->Polarity));
+  assert_param(IS_LL_LPTIM_CLOCK_SOURCE(LPTIM_InitStruct->ClockSource));
+  assert_param(IS_LL_LPTIM_CLOCK_PRESCALER(LPTIM_InitStruct->Prescaler));
+  assert_param(IS_LL_LPTIM_WAVEFORM(LPTIM_InitStruct->Waveform));
+  assert_param(IS_LL_LPTIM_OUTPUT_POLARITY(LPTIM_InitStruct->Polarity));
   
   /* Set CKSEL bitfield according to ClockSource value */
   /* Set PRESC bitfield according to Prescaler value */
