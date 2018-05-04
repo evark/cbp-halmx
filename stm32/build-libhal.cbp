@@ -13,10 +13,10 @@
 				<Option type="2" />
 				<Option compiler="arm-elf-gcc" />
 				<Compiler>
-					<Add option="-mcpu=cortex-m0" />
 					<Add option="-msoft-float" />
+					<Add option="-mcpu=cortex-m0" />
 					<Add option="-DSTM32F030x6" />
-					<Add option="-DHSE_VALUE=8000000U" />
+					<Add option="-DHSI_VALUE=8000000U" />
 					<Add directory="system/CMSIS/STM32F0xx/Include" />
 					<Add directory="system/HALMX/STM32F0xx_HAL_Driver/Inc" />
 				</Compiler>
@@ -129,6 +129,60 @@
 		<Unit filename="system/CMSIS/Include/core_cmSimd.h" />
 		<Unit filename="system/CMSIS/Include/core_sc000.h" />
 		<Unit filename="system/CMSIS/Include/core_sc300.h" />
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f030x6.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f030x8.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f030xc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f031x6.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f038xx.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f042x6.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f048xx.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f051x8.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f058xx.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f070x6.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f070xb.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f071xb.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f072xb.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f078xx.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f091xc.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f098xx.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/stm32f0xx.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/CMSIS/STM32F0xx/Include/system_stm32f0xx.h">
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
 		<Unit filename="system/CMSIS/STM32F1xx/Include/stm32f100xb.h">
 			<Option target="libhal-f103xb-8m" />
 		</Unit>
@@ -2355,6 +2409,14 @@
 		</Unit>
 		<Unit filename="system/src/diag/trace_impl.c">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="system/src/f0/system_stm32f0xx.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
+		</Unit>
+		<Unit filename="system/src/f0/vectors_stm32f0xx.c">
+			<Option compilerVar="CC" />
+			<Option target="libhal-f030x6-8m" />
 		</Unit>
 		<Unit filename="system/src/f1/system_stm32f1xx.c">
 			<Option compilerVar="CC" />

@@ -1,7 +1,15 @@
 #ifndef CMSIS_H
 #define CMSIS_H
 
-#if defined (STM32F103xB) 
+#if defined (STM32F030x6)
+#include "stm32f0xx.h"
+#define NVIC_NUM_VECTORS      44
+#define NVIC_USER_IRQ_OFFSET  16
+#define NVIC_RAM_VECTOR_ADDRESS   (0x20000000)  // Vectors positioned at start of RAM
+#define NVIC_FLASH_VECTOR_ADDRESS (0x08000000)  // Initial vector position in flash
+#endif
+
+#if defined (STM32F103xB)
 #include "stm32f1xx.h"
 #define NVIC_NUM_VECTORS      59
 #define NVIC_USER_IRQ_OFFSET  16

@@ -216,7 +216,7 @@ __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_PRIMASK(uint32_t p
 }
 
 
-#if       (__CORTEX_M >= 0x03U)
+#if defined(__CORTEX_M) && (__CORTEX_M >= 0x03U)
 
 /**
   \brief   Enable FIQ
@@ -304,7 +304,7 @@ __attribute__( ( always_inline ) ) __STATIC_INLINE void __set_FAULTMASK(uint32_t
 #endif /* (__CORTEX_M >= 0x03U) */
 
 
-#if       (__CORTEX_M == 0x04U) || (__CORTEX_M == 0x07U)
+#if defined(__CORTEX_M) && ((__CORTEX_M == 0x04U) || (__CORTEX_M == 0x07U))
 
 /**
   \brief   Get FPSCR
@@ -527,7 +527,7 @@ __attribute__((always_inline)) __STATIC_INLINE uint32_t __RBIT(uint32_t value)
 {
   uint32_t result;
 
-#if       (__CORTEX_M >= 0x03U) || (__CORTEX_SC >= 300U)
+#if (defined(__CORTEX_M) && (__CORTEX_M >= 0x03U)) || (defined(__CORTEX_SC) && (__CORTEX_SC >= 300U))
    __ASM volatile ("rbit %0, %1" : "=r" (result) : "r" (value) );
 #else
   int32_t s = 4 /*sizeof(v)*/ * 8 - 1; /* extra shift needed at end */
@@ -554,7 +554,7 @@ __attribute__((always_inline)) __STATIC_INLINE uint32_t __RBIT(uint32_t value)
 #define __CLZ             __builtin_clz
 
 
-#if       (__CORTEX_M >= 0x03U) || (__CORTEX_SC >= 300U)
+#if (defined(__CORTEX_M) && (__CORTEX_M >= 0x03U)) || (defined(__CORTEX_SC) && (__CORTEX_SC >= 300U))
 
 /**
   \brief   LDR Exclusive (8 bit)
@@ -827,7 +827,7 @@ __attribute__((always_inline)) __STATIC_INLINE void __STRT(uint32_t value, volat
   @{
 */
 
-#if (__CORTEX_M >= 0x04U)  /* only for Cortex-M4 and above */
+#if defined(__CORTEX_M) && (__CORTEX_M >= 0x04U)  /* only for Cortex-M4 and above */
 
 __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __SADD8(uint32_t op1, uint32_t op2)
 {

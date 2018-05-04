@@ -27,13 +27,14 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *******************************************************************************
- */ 
+ */
 #include "cmsis_nvic.h"
 
 void NVIC_SetVector(IRQn_Type IRQn, uint32_t vector) {
+#if (__CORTEX_M == 0x00U)
+#else
     uint32_t *vectors = (uint32_t *)SCB->VTOR;
     uint32_t i;
-
     // Copy and switch to dynamic vectors if the first time called
     if (SCB->VTOR == NVIC_FLASH_VECTOR_ADDRESS) {
         uint32_t *old_vectors = vectors;
@@ -44,9 +45,15 @@ void NVIC_SetVector(IRQn_Type IRQn, uint32_t vector) {
         SCB->VTOR = (uint32_t)NVIC_RAM_VECTOR_ADDRESS;
     }
     vectors[IRQn + NVIC_USER_IRQ_OFFSET] = vector;
+#endif
 }
 
 uint32_t NVIC_GetVector(IRQn_Type IRQn) {
+#if (__CORTEX_M == 0x00U)
+    uint32_t *vectors = (uint32_t*)NVIC_RAM_VECTOR_ADDRESS;
+    return vectors[IRQn + NVIC_FLASH_VECTOR_ADDRESS];
+#else
     uint32_t *vectors = (uint32_t*)SCB->VTOR;
     return vectors[IRQn + NVIC_USER_IRQ_OFFSET];
+#endif
 }
